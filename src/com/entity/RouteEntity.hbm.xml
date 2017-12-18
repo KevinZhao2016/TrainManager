@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.entity.RouteEntity" table="Route" schema="ourDB">
+        <id name="rid">
+            <column name="Rid" sql-type="int(11)"/>
+        </id>
+        <property name="stationA">
+            <column name="StationA" sql-type="int(11)"/>
+        </property>
+        <property name="stationB">
+            <column name="StationB" sql-type="int(11)"/>
+        </property>
+        <property name="distance">
+            <column name="Distance" sql-type="double" precision="-1"/>
+        </property>
+        <property name="time">
+            <column name="Time" sql-type="time"/>
+        </property>
+        <property name="price">
+            <column name="Price" sql-type="double" precision="-1"/>
+        </property>
+    </class>
+</hibernate-mapping>
