@@ -37,5 +37,6 @@
     <orderEntry type="library" name="Hibernate 5.2.12-5.2.12" level="project" />
     <orderEntry type="library" name="Spring-4.3.13.RELEASE" level="project" />
     <orderEntry type="library" name="Struts 2" level="project" />
+    <orderEntry type="library" name="src" level="project" />
   </component>
 </module>
