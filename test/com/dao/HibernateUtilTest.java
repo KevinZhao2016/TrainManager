@@ -9,11 +9,16 @@ public class HibernateUtilTest {
     private HibernateUtil util = new HibernateUtil();
 
     @Test
-    public void list() {
-        List<UsersEntity> list = util.list();
+    public void ListUser() {
+        List<UsersEntity> list = util.ListUser();
         for (UsersEntity stu : list) {
             System.out.print(stu.getId() + " ");
             System.out.println(stu.getName());
         }
+    }
+
+    @Test
+    public void Login() {
+        System.out.println(util.Login("13396681253","123456"));
     }
 }

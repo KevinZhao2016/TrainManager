@@ -1,15 +1,12 @@
 package com.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.util.Objects;
 
-@Entity
-@Table(name = "Users", schema = "ourDB", catalog = "")
 public class UsersEntity {
     private int id;
     private String name;
     private String passwd;
+    private String telNum;
 
     public int getId() {
         return id;
@@ -35,6 +32,14 @@ public class UsersEntity {
         this.passwd = passwd;
     }
 
+    public String getTelNum() {
+        return telNum;
+    }
+
+    public void setTelNum(String telNum) {
+        this.telNum = telNum;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -42,12 +47,13 @@ public class UsersEntity {
         UsersEntity that = (UsersEntity) o;
         return id == that.id &&
                 Objects.equals(name, that.name) &&
-                Objects.equals(passwd, that.passwd);
+                Objects.equals(passwd, that.passwd) &&
+                Objects.equals(telNum, that.telNum);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, name, passwd);
+        return Objects.hash(id, name, passwd, telNum);
     }
 }

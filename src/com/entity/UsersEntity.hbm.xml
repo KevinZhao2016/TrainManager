@@ -14,5 +14,8 @@
         <property name="passwd">
             <column name="passwd" sql-type="varchar(30)" length="30"/>
         </property>
+        <property name="telNum">
+            <column name="TelNum" sql-type="varchar(11)" length="11"/>
+        </property>
     </class>
 </hibernate-mapping>
