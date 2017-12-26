@@ -64,7 +64,11 @@ public class HibernateUtil {
             e.printStackTrace();
             tran.rollback();
             return 0;
-        }finally {
+        }catch (Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+        finally {
             session.close();
         }
     }

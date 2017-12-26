@@ -44,7 +44,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Hibernate 5.2.12-5.2.12" level="project" />
     <orderEntry type="library" name="Spring-4.3.13.RELEASE" level="project" />
-    <orderEntry type="library" name="Struts 2" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.44-bin" level="project" />
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit4">
@@ -56,5 +55,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="struts" level="project" />
   </component>
 </module>
