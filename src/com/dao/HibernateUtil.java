@@ -28,6 +28,45 @@ public class HibernateUtil {
         }
     }
 
+    public List ListStation() {
+        Session session = new HibernateUtil().getSession();
+        try {
+            List<UsersEntity> list = session.createQuery("FROM StationEntity station").list();
+            return list;
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
+
+    public List ListRoute() {
+        Session session = new HibernateUtil().getSession();
+        try {
+            List<UsersEntity> list = session.createQuery("FROM RouteEntity route").list();
+            return list;
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
+
+    public List ListTrips() {
+        Session session = new HibernateUtil().getSession();
+        try {
+            List<UsersEntity> list = session.createQuery("FROM TripsEntity trips").list();
+            return list;
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
+    }
+
     public int Login(String TelNum,String Password){
         Session session = new HibernateUtil().getSession();
         try{
