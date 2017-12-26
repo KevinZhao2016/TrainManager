@@ -55,7 +55,7 @@
                     <label for="remember"><input type="checkbox" id="remember"> 记住我</label>
                 </div>
                 <div class="form-group">
-                    <p>没有账号 <a href="sign-up.html">注册</a> | <a href="forgot.html">忘记密码？</a></p>
+                    <p>没有账号 <a href="register.jsp">注册</a></p>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="登录" class="btn btn-primary">
