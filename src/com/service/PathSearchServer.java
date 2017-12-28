@@ -1,6 +1,9 @@
 package com.service;
 
 import com.dao.HibernateUtil;
+import com.dao.RouteDao;
+import com.dao.StationDao;
+import com.dao.TripsDao;
 import com.entity.RouteEntity;
 import com.entity.StationEntity;
 import com.entity.TripsEntity;
@@ -9,11 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PathSearchServer {
-    private static HibernateUtil util = new HibernateUtil();
+    private static StationDao stationDao = new StationDao();
+    private static RouteDao routeDao = new RouteDao();
+    private static TripsDao tripsDao = new TripsDao();
     private static final double INF = Double.POSITIVE_INFINITY;
-    private static List<StationEntity> stationList = util.ListStation();
-    private static List<TripsEntity> tripsList = util.ListTrips();
-    private static List<RouteEntity> routeList = util.ListRoute();
+    private static List<StationEntity> stationList = stationDao.ListStation();
+    private static List<TripsEntity> tripsList = tripsDao.ListTrips();
+    private static List<RouteEntity> routeList = routeDao.ListRoute();
     private double[][] distance = new double[stationList.size() + 1][stationList.size() + 1];
 
     private void initDistance() {
