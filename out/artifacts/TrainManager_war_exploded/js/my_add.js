@@ -13,7 +13,8 @@ function sign_up_deteciton() {
         return false;
     }else if(!myreg.test(telval)){
         alert("请输入正确的手机号码！");
-    }
+        return false;
+}
     else if (passval.length<4 || passval.length>16){
         alert("密码的长度必须在4-16个字符");
         pass.select();
@@ -23,6 +24,8 @@ function sign_up_deteciton() {
         rpass.select();
         return false;
     } else {
+        show = document.getElementsByClassName('alert');
+        show[0].style.display = "block";
         return true;
     }
 }

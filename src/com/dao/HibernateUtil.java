@@ -73,9 +73,8 @@ public class HibernateUtil {
             String hql = "from UsersEntity where telNum = ?";
             Query query = session.createQuery(hql);
             query.setParameter(0,TelNum);
-            List<UsersEntity> userlist = query.list();
-            if(userlist.size() != 0){
-                UsersEntity user = userlist.get(0);
+            UsersEntity user = (UsersEntity)query.uniqueResult();
+            if(user != null){
                 String pwd = user.getPasswd();
                 if (pwd.equals(Password)){
                     return user.getId();

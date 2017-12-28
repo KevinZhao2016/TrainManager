@@ -46,6 +46,9 @@
             <form action="/action/register" class="sign_in_form" method="post" onsubmit="return sign_up_deteciton()">
                 <h2>注册</h2>
                 <div class="form-group">
+                    <div class="alert alert-success" role="alert"style="display: none">您的信息正在提交</div>
+                </div>
+                <div class="form-group">
                     <!--<label for="username" class="sr-only">Name</label>-->
                     <input type="text" class="form-control" id="username" name="userName" placeholder="用户名" autocomplete="off" required>
                 </div>
