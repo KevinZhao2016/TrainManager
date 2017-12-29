@@ -1,7 +1,7 @@
 package com.service.impl;
 
-import com.dao.RouteDaoImpl;
-import com.dao.StationDaoImpl;
+import com.dao.impl.RouteDaoImpl;
+import com.dao.impl.StationDaoImpl;
 import com.dao.impl.TripsDaoImpl;
 import com.entity.RouteEntity;
 import com.entity.StationEntity;

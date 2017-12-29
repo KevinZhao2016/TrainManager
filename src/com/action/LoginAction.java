@@ -1,8 +1,6 @@
 package com.action;
 
-
 import com.service.impl.LoginServerImpl;
-
 
 public class LoginAction {
     private String password;
