@@ -1,6 +1,6 @@
 package com.dao;
 
-import com.entity.UsersEntity;
+
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 

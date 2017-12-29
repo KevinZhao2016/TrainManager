@@ -1,8 +1,7 @@
 package com.action;
 
-import com.dao.HibernateUtil;
 import com.entity.UsersEntity;
-import com.service.RegisterServer;
+import com.service.impl.RegisterServerImpl;
 
 public class RegisterAction {
     private String userName;
@@ -34,8 +33,8 @@ public class RegisterAction {
         user.setTelNum(getTelNum());
         user.setName(getUserName());
         user.setPasswd(getPassword());
-        RegisterServer server = new RegisterServer();
-        if (1 == server.Register(user)) {
+        RegisterServerImpl registerServerImpl = new RegisterServerImpl();
+        if (1 == registerServerImpl.Register(user)) {
             return "success";
         } else
             return "fail";

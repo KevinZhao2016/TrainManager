@@ -1,7 +1,7 @@
 package com.action;
 
-import com.dao.HibernateUtil;
-import com.dao.UserDao;
+
+import com.service.impl.LoginServerImpl;
 
 
 public class LoginAction {
@@ -22,8 +22,8 @@ public class LoginAction {
 
 
     public String execute() throws Exception {
-        UserDao userDao = new UserDao();
-        if (userDao.Login(telNum,password) != 0) {
+        LoginServerImpl loginServerImpl = new LoginServerImpl();
+        if (loginServerImpl.Login(telNum,password) != 0) {
             return "success";
         } else
             return "fail";
