@@ -20,8 +20,14 @@
         <property name="time">
             <column name="Time" sql-type="time"/>
         </property>
-        <property name="price">
-            <column name="Price" sql-type="double" precision="-1"/>
+        <property name="businessClass">
+            <column name="BusinessClass" sql-type="double" precision="-1"/>
+        </property>
+        <property name="firstClass">
+            <column name="FirstClass" sql-type="double" precision="-1" not-null="true"/>
+        </property>
+        <property name="secondClass">
+            <column name="SecondClass" sql-type="double" precision="-1" not-null="true"/>
         </property>
     </class>
 </hibernate-mapping>

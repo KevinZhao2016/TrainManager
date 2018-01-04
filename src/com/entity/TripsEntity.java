@@ -1,11 +1,14 @@
 package com.entity;
 
+import java.sql.Timestamp;
 import java.util.Objects;
 
 public class TripsEntity {
     private int tid;
     private String tname;
     private String passby;
+    private Timestamp departure;
+    private Integer ttype;
 
     public int getTid() {
         return tid;
@@ -31,6 +34,22 @@ public class TripsEntity {
         this.passby = passby;
     }
 
+    public Timestamp getDeparture() {
+        return departure;
+    }
+
+    public void setDeparture(Timestamp departure) {
+        this.departure = departure;
+    }
+
+    public Integer getTtype() {
+        return ttype;
+    }
+
+    public void setTtype(Integer ttype) {
+        this.ttype = ttype;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -38,12 +57,14 @@ public class TripsEntity {
         TripsEntity that = (TripsEntity) o;
         return tid == that.tid &&
                 Objects.equals(tname, that.tname) &&
-                Objects.equals(passby, that.passby);
+                Objects.equals(passby, that.passby) &&
+                Objects.equals(departure, that.departure) &&
+                Objects.equals(ttype, that.ttype);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(tid, tname, passby);
+        return Objects.hash(tid, tname, passby, departure, ttype);
     }
 }

@@ -9,7 +9,9 @@ public class RouteEntity {
     private int stationB;
     private double distance;
     private Time time;
-    private double price;
+    private double businessClass;
+    private Double firstClass;
+    private Double secondClass;
 
     public int getRid() {
         return rid;
@@ -51,12 +53,28 @@ public class RouteEntity {
         this.time = time;
     }
 
-    public double getPrice() {
-        return price;
+    public double getBusinessClass() {
+        return businessClass;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setBusinessClass(double businessClass) {
+        this.businessClass = businessClass;
+    }
+
+    public Double getFirstClass() {
+        return firstClass;
+    }
+
+    public void setFirstClass(Double firstClass) {
+        this.firstClass = firstClass;
+    }
+
+    public Double getSecondClass() {
+        return secondClass;
+    }
+
+    public void setSecondClass(Double secondClass) {
+        this.secondClass = secondClass;
     }
 
     @Override
@@ -68,13 +86,15 @@ public class RouteEntity {
                 stationA == that.stationA &&
                 stationB == that.stationB &&
                 Double.compare(that.distance, distance) == 0 &&
-                Double.compare(that.price, price) == 0 &&
-                Objects.equals(time, that.time);
+                Double.compare(that.businessClass, businessClass) == 0 &&
+                Objects.equals(time, that.time) &&
+                Objects.equals(firstClass, that.firstClass) &&
+                Objects.equals(secondClass, that.secondClass);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(rid, stationA, stationB, distance, time, price);
+        return Objects.hash(rid, stationA, stationB, distance, time, businessClass, firstClass, secondClass);
     }
 }
