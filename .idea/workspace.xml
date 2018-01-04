@@ -6,29 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47caf18a-4fb8-4916-a9c2-f27a78d8035f" name="Default" comment="修改Daolmpl中三个Entity">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/struts2_json_plugin_2_5_14_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/entity/QueryResult.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/com/service/impl/PathSearchServerImplTest.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a8d248c-82c4-484e-8634-84a892a46706.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8a8d248c-82c4-484e-8634-84a892a46706.xml" />
+    <list default="true" id="47caf18a-4fb8-4916-a9c2-f27a78d8035f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/struts2_json_plugin_2_5_14_1.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/TrainManager.iml" afterPath="$PROJECT_DIR$/TrainManager.iml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/com/action/LoginAction.class" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/com/action/LoginAction.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/com/action/LoginAction.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/com/action/RegisterAction.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/com/dao/HibernateUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/com/entity/RouteEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/com/entity/StationEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/com/entity/TripsEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/com/entity/UsersEntity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/com/service/RegisterServer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/entity/RouteEntity.hbm.xml" afterPath="$PROJECT_DIR$/src/com/entity/RouteEntity.hbm.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/entity/RouteEntity.java" afterPath="$PROJECT_DIR$/src/com/entity/RouteEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/entity/TripsEntity.hbm.xml" afterPath="$PROJECT_DIR$/src/com/entity/TripsEntity.hbm.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/entity/TripsEntity.java" afterPath="$PROJECT_DIR$/src/com/entity/TripsEntity.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/service/impl/PathSearchServerImpl.java" afterPath="$PROJECT_DIR$/src/com/service/impl/PathSearchServerImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" />
-      <change beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/com/entity/RouteEntity.class" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/com/entity/RouteEntity.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/com/entity/RouteEntity.hbm.xml" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/com/entity/RouteEntity.hbm.xml" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/com/entity/TripsEntity.class" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/com/entity/TripsEntity.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/com/entity/TripsEntity.hbm.xml" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/com/entity/TripsEntity.hbm.xml" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/hibernate.cfg.xml" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/struts.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/com/entity/RouteEntity.hbm.xml" afterPath="$PROJECT_DIR$/out/production/TrainManager/com/entity/RouteEntity.hbm.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/com/entity/TripsEntity.hbm.xml" afterPath="$PROJECT_DIR$/out/production/TrainManager/com/entity/TripsEntity.hbm.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/production/TrainManager/hibernate.cfg.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrainManager/struts.xml" afterPath="$PROJECT_DIR$/out/production/TrainManager/struts.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,6 +42,24 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="ourDB@111.231.22.45" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ourDB@111.231.22.45" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ourDB@111.231.22.45" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ourDB: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ourDB@111.231.22.45" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ourDB: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="Users: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -84,23 +93,21 @@
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1161">
-              <caret line="43" column="37" lean-forward="false" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="729">
+              <caret line="84" column="7" lean-forward="false" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
+              <folding>
+                <element signature="e#2977#2983#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/struts.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+      <file leaf-file-name="Users" pinned="false" current-in-tab="true">
+        <entry file="das://table:/3da85857/8a8d248c-82c4-484e-8634-84a892a46706/ourDB.Users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
-          </provider>
-          <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
@@ -108,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/action/LoginAction.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="567">
-              <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+              <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -259,7 +266,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -312,7 +319,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -320,7 +327,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="C:/study/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.14614615" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="JPA.DatabaseSchemaImportDialog" value="8a8d248c-82c4-484e-8634-84a892a46706" />
@@ -357,7 +364,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JAR Application.struts2-json-plugin-2.5.14.1.jar">
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -949,7 +956,9 @@
       <workItem from="1515062033899" duration="2351000" />
       <workItem from="1515064427801" duration="322000" />
       <workItem from="1515068904339" duration="248000" />
-      <workItem from="1515073141978" duration="136000" />
+      <workItem from="1515073141978" duration="552000" />
+      <workItem from="1515074206132" duration="37000" />
+      <workItem from="1515075094230" duration="66000" />
     </task>
     <task id="LOCAL-00001" summary="I'm Jason's father">
       <created>1513588754300</created>
@@ -1007,7 +1016,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514510504617</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="修改Entity">
+      <created>1515073306404</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1515073306404</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1043,7 +1059,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61893000" />
+    <option name="totallyTimeSpent" value="62412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -1055,7 +1071,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1065,12 +1081,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3132037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2857143" sideWeight="0.51688844" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2893773" sideWeight="0.48311156" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2967033" sideWeight="0.48311156" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1140,7 +1156,8 @@
     <MESSAGE value="server interface" />
     <MESSAGE value="RouteDaoImpl" />
     <MESSAGE value="修改Daolmpl中三个Entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改Daolmpl中三个Entity" />
+    <MESSAGE value="修改Entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改Entity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1174,7 +1191,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/service/ShortestPathServer.java" />
-    <entry file="das://table:/3da85857/8a8d248c-82c4-484e-8634-84a892a46706/ourDB.Users" />
     <entry file="file://$PROJECT_DIR$/src/com/dao/impl/StationImpl.java" />
     <entry file="file://$PROJECT_DIR$/test/com/dao/HibernateUtilTest.java" />
     <entry file="file://$PROJECT_DIR$/src/beans.xml">
@@ -1346,14 +1362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1161">
-          <caret line="43" column="37" lean-forward="false" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/entity/QueryResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1432,20 +1440,37 @@
     <entry file="file://$PROJECT_DIR$/src/com/action/LoginAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
-          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/struts.xml">
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="84" column="7" lean-forward="false" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
+          <folding>
+            <element signature="e#2977#2983#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/3da85857/8a8d248c-82c4-484e-8634-84a892a46706/ourDB.Users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
       </provider>
     </entry>
   </component>

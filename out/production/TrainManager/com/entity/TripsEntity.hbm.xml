@@ -14,5 +14,11 @@
         <property name="passby">
             <column name="Passby" sql-type="varchar(255)"/>
         </property>
+        <property name="departure">
+            <column name="Departure" sql-type="time"/>
+        </property>
+        <property name="ttype">
+            <column name="Ttype" sql-type="int(11)" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>
