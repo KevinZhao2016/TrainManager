@@ -7,21 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47caf18a-4fb8-4916-a9c2-f27a78d8035f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/struts2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/display.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/images/geometry2.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/geometry2.png" afterPath="$PROJECT_DIR$/web/img/geometry2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/TrainManager_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/TrainManager_war_exploded.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/img/geometry2.png" afterPath="$PROJECT_DIR$/web/images/geometry2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainManager.iml" afterPath="$PROJECT_DIR$/TrainManager.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/WEB-INF/classes/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/book.jsp" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/book.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/js/my_add.js" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/js/my_add.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/login.jsp" afterPath="$PROJECT_DIR$/out/artifacts/TrainManager_war_exploded/login.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TrainManager/struts.xml" afterPath="$PROJECT_DIR$/out/production/TrainManager/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/book.jsp" afterPath="$PROJECT_DIR$/web/book.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/my_add.js" afterPath="$PROJECT_DIR$/web/js/my_add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,11 +86,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+            <state relative-caret-position="150">
+              <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -147,7 +138,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="struts.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -1020,6 +1011,7 @@
       <method />
     </configuration>
     <configuration default="false" name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/login.jsp" />
       <deployment>
         <artifact name="TrainManager:war exploded">
           <settings>
@@ -1093,10 +1085,10 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JAR Application.struts2-json-plugin-2.5.14.1.jar" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.LoginServerImplTest.login" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.PathSearchServerImplTest.getPaths" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.PathSearchServerImplTest" />
-      <item index="4" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.LoginServerImplTest.login" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.PathSearchServerImplTest.getPaths" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.PathSearchServerImplTest" />
     </list>
     <recent_temporary>
       <list size="3">
@@ -1225,7 +1217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515075559469</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add book.jsp and display.jsp ←.←">
+      <created>1515154562703</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1515154562703</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1261,7 +1260,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76422000" />
+    <option name="totallyTimeSpent" value="76603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
@@ -1287,7 +1286,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.62174404" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.62174404" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2857143" sideWeight="0.51688844" order="5" side_tool="true" content_ui="tabs" />
@@ -1386,7 +1385,8 @@
     <MESSAGE value="修改Entity" />
     <MESSAGE value="修复struts-json导入" />
     <MESSAGE value="fix hibernate" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix hibernate" />
+    <MESSAGE value="Add book.jsp and display.jsp ←.←" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add book.jsp and display.jsp ←.←" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1534,6 +1534,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1748,14 +1749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/book.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1133">
@@ -1777,6 +1770,14 @@
       </provider>
       <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

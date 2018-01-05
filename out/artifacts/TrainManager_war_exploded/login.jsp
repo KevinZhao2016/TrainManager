@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <!-- Start Sign In Form -->
-            <form action="/action/login" class="sign_in_form"method="post">
+            <form action="/action/login.action" class="sign_in_form"method="post">
                 <h2>登录</h2>
                 <div class="form-group">
                     <label for="telNum" class="sr-only">telNum</label>
