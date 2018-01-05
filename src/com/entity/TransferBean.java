@@ -1,14 +1,48 @@
 package com.entity;
 
 import java.sql.Time;
-import java.util.List;
 
-public class QueryResult {
+public class TransferBean {
+    private String Tname;
+    private Double BusinessClassPrice;
+    private Double FirstClassPrice;
+    private Double SecondClassPrice;
     private Time DepartureTime;
     private Time ArrivalTime;
     private String DepartureStation;
     private String ArrivalStation;
-    private List<TransferBean> TransferList;
+
+    public String getTname() {
+        return Tname;
+    }
+
+    public void setTname(String tname) {
+        Tname = tname;
+    }
+
+    public Double getBusinessClassPrice() {
+        return BusinessClassPrice;
+    }
+
+    public void setBusinessClassPrice(Double businessClassPrice) {
+        BusinessClassPrice = businessClassPrice;
+    }
+
+    public Double getFirstClassPrice() {
+        return FirstClassPrice;
+    }
+
+    public void setFirstClassPrice(Double firstClassPrice) {
+        FirstClassPrice = firstClassPrice;
+    }
+
+    public Double getSecondClassPrice() {
+        return SecondClassPrice;
+    }
+
+    public void setSecondClassPrice(Double secondClassPrice) {
+        SecondClassPrice = secondClassPrice;
+    }
 
     public Time getDepartureTime() {
         return DepartureTime;
@@ -40,13 +74,5 @@ public class QueryResult {
 
     public void setArrivalStation(String arrivalStation) {
         ArrivalStation = arrivalStation;
-    }
-
-    public List<TransferBean> getTransferList() {
-        return TransferList;
-    }
-
-    public void setTransferList(List<TransferBean> transferList) {
-        TransferList = transferList;
     }
 }

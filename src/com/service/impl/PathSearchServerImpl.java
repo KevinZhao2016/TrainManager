@@ -33,7 +33,7 @@ public class PathSearchServerImpl implements PathSearchServer {
         }
     }
 
-    private StationEntity findStationByPinyin(String Pinyin) {
+    private StationEntity getStationByPinyin(String Pinyin) {
         for (StationEntity station : stationList) {
             if (station.getPinyin().equals(Pinyin)) {
                 return station;
@@ -51,15 +51,15 @@ public class PathSearchServerImpl implements PathSearchServer {
         }
         return INF;
     }
-
+    //  构建邻接矩阵
     private void setDistanceMatrix() {
         initDistance();
         for (TripsEntity trips : tripsList) {
             String passby = trips.getPassby();
             String[] passByStations = passby.split(",");
             for (int i = 1; i < passByStations.length - 1; i++) {
-                int stationAId = findStationByPinyin(passByStations[i]).getId();
-                int stationBId = findStationByPinyin(passByStations[i + 1]).getId();
+                int stationAId = getStationByPinyin(passByStations[i]).getId();
+                int stationBId = getStationByPinyin(passByStations[i + 1]).getId();
                 double dis = getDistanceById(stationAId, stationBId);
                 distance[stationAId][stationBId] = dis;
             }
