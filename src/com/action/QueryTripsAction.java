@@ -1,7 +1,6 @@
 package com.action;
 
 import com.entity.QueryResult;
-import com.entity.TransferBean;
 import com.service.impl.PathSearchServerImpl;
 import com.service.impl.QueryTripsServerImpl;
 
@@ -13,11 +12,10 @@ public class QueryTripsAction {
     private Time DepartureTime;
     private String DepartureStation;
     private String ArrivalStation;
-    private QueryResult queryResult = new QueryResult();
-
-    public QueryResult getQueryResult() {
-        return queryResult;
-    }
+    private Time TotalTime;
+    private Time ArrivalTime;
+    private Double TotalSecondClassPrice;
+    private List<QueryResult> queryResult;
 
     public Time getDepartureTime() {
         return DepartureTime;
@@ -43,17 +41,59 @@ public class QueryTripsAction {
         ArrivalStation = arrivalStation;
     }
 
+    public Time getTotalTime() {
+        return TotalTime;
+    }
+
+    public void setTotalTime(Time totalTime) {
+        TotalTime = totalTime;
+    }
+
+    public Time getArrivalTime() {
+        return ArrivalTime;
+    }
+
+    public void setArrivalTime(Time arrivalTime) {
+        ArrivalTime = arrivalTime;
+    }
+
+    public Double getTotalSecondClassPrice() {
+        return TotalSecondClassPrice;
+    }
+
+    public void setTotalSecondClassPrice(Double totalSecondClassPrice) {
+        TotalSecondClassPrice = totalSecondClassPrice;
+    }
+
+    public List<QueryResult> getQueryResult() {
+        return queryResult;
+    }
+
+    public void setQueryResult(List<QueryResult> queryResult) {
+        this.queryResult = queryResult;
+    }
+
     public String execute() throws Exception {
-        QueryResult queryResult = new QueryResult();
+        QueryResult result = new QueryResult();
+        List<QueryResult> queryResult = new ArrayList<QueryResult>();
         PathSearchServerImpl pathSearchServer = new PathSearchServerImpl();
         QueryTripsServerImpl queryTripsServer = new QueryTripsServerImpl();
-        queryResult.setArrivalStation(getArrivalStation());
-        queryResult.setDepartureStation(getDepartureStation());
-        queryResult.setDepartureTime(getDepartureTime());
-        queryResult.setArrivalTime(new Time(2,30,0));
 
-        List<TransferBean> TransferList = new ArrayList<TransferBean>();
-        queryResult.setTransferList(TransferList);
+        result.setArrivalTime(new Time(2,30,0));
+        result.setDepartureTime(new Time(1,30,0));
+        result.setArrivalStation("dezhoudong");
+        result.setDepartureStation("hangzhoudong");
+        result.setBusinessClassPrice(1888.0);
+        result.setSecondClassPrice(999.9);
+        result.setFirstClassPrice(1000.0);
+        result.setTname("D111");
+        queryResult.add(result);
+        queryResult.add(result);
+        setTotalTime(new Time(2,30,0));
+        setArrivalTime(new Time(8,45,0));
+        setTotalSecondClassPrice(888.0);
+        setQueryResult(queryResult);
+
         return "success";
     }
 }
