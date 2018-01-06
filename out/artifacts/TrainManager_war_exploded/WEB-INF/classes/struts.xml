@@ -17,7 +17,8 @@
         </action>
 
         <action name="query" class="com.action.QueryTripsAction" method="execute">
-            <result name="success" type="json"></result>
+            <result name="success" type="redirect">/display.jsp</result>
+            <result name="fail" type="redirect">/query_fail.jsp</result>
         </action>
     </package>
 
