@@ -1,21 +1,19 @@
 package com.action;
 
 import com.entity.QueryResult;
-import com.service.impl.PathSearchServerImpl;
+import com.opensymphony.xwork2.ActionContext;
 import com.service.impl.QueryTripsServerImpl;
 
 import java.sql.Time;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class QueryTripsAction {
     private Time DepartureTime;
     private String DepartureStation;
     private String ArrivalStation;
-    private Time TotalTime;
-    private Time ArrivalTime;
-    private Double TotalSecondClassPrice;
-    private List<QueryResult> queryResult;
+    private int Type;
+    private List<QueryResult> queryResults;
 
     public Time getDepartureTime() {
         return DepartureTime;
@@ -41,59 +39,32 @@ public class QueryTripsAction {
         ArrivalStation = arrivalStation;
     }
 
-    public Time getTotalTime() {
-        return TotalTime;
+    public int getType() {
+        return Type;
     }
 
-    public void setTotalTime(Time totalTime) {
-        TotalTime = totalTime;
+    public void setType(int type) {
+        Type = type;
     }
 
-    public Time getArrivalTime() {
-        return ArrivalTime;
+    public List<QueryResult> getQueryResults() {
+        return queryResults;
     }
 
-    public void setArrivalTime(Time arrivalTime) {
-        ArrivalTime = arrivalTime;
-    }
-
-    public Double getTotalSecondClassPrice() {
-        return TotalSecondClassPrice;
-    }
-
-    public void setTotalSecondClassPrice(Double totalSecondClassPrice) {
-        TotalSecondClassPrice = totalSecondClassPrice;
-    }
-
-    public List<QueryResult> getQueryResult() {
-        return queryResult;
-    }
-
-    public void setQueryResult(List<QueryResult> queryResult) {
-        this.queryResult = queryResult;
+    public void setQueryResults(List<QueryResult> queryResults) {
+        this.queryResults = queryResults;
     }
 
     public String execute() throws Exception {
-        QueryResult result = new QueryResult();
-        List<QueryResult> queryResult = new ArrayList<QueryResult>();
-        PathSearchServerImpl pathSearchServer = new PathSearchServerImpl();
+        ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+        List<QueryResult> queryResultList;
         QueryTripsServerImpl queryTripsServer = new QueryTripsServerImpl();
-
-        result.setArrivalTime(new Time(2,30,0));
-        result.setDepartureTime(new Time(1,30,0));
-        result.setArrivalStation("dezhoudong");
-        result.setDepartureStation("hangzhoudong");
-        result.setBusinessClassPrice(1888.0);
-        result.setSecondClassPrice(999.9);
-        result.setFirstClassPrice(1000.0);
-        result.setTname("D111");
-        queryResult.add(result);
-        queryResult.add(result);
-        setTotalTime(new Time(2,30,0));
-        setArrivalTime(new Time(8,45,0));
-        setTotalSecondClassPrice(888.0);
-        setQueryResult(queryResult);
-
+        queryResultList = queryTripsServer.getDirectPath(getDepartureStation(), getArrivalStation());
+        setQueryResults(queryResultList);
+        setType(queryResultList.get(0).getTripBeans().size());
+        session.put("queryResultList",queryResultList);
+        session.put("Type",getType());
         return "success";
     }
 }

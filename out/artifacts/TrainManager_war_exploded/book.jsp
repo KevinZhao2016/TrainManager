@@ -25,12 +25,12 @@
 </head>
 
 <body>
-<div class="image-container set-full-height" style="background-image: url('img/paper-2.jpeg')">
+<div class="image-container set-full-height" style="background-image: url('images/paper-2.jpeg')">
     <!--   Creative Tim Branding   -->
     <a href="#">
         <div class="logo-container">
             <div class="logo">
-                <img src="img/new_logo.png">
+                <img src="images/new_logo.png">
             </div>
             <div class="brand">
                 Jason

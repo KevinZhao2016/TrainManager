@@ -1,49 +1,17 @@
 package com.entity;
 
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.List;
 
 public class QueryResult {
-    private String Tname;
-    private Double BusinessClassPrice;
-    private Double FirstClassPrice;
-    private Double SecondClassPrice;
     private Time DepartureTime;
-    private Time ArrivalTime;
     private String DepartureStation;
     private String ArrivalStation;
-
-    public String getTname() {
-        return Tname;
-    }
-
-    public void setTname(String tname) {
-        Tname = tname;
-    }
-
-    public Double getBusinessClassPrice() {
-        return BusinessClassPrice;
-    }
-
-    public void setBusinessClassPrice(Double businessClassPrice) {
-        BusinessClassPrice = businessClassPrice;
-    }
-
-    public Double getFirstClassPrice() {
-        return FirstClassPrice;
-    }
-
-    public void setFirstClassPrice(Double firstClassPrice) {
-        FirstClassPrice = firstClassPrice;
-    }
-
-    public Double getSecondClassPrice() {
-        return SecondClassPrice;
-    }
-
-    public void setSecondClassPrice(Double secondClassPrice) {
-        SecondClassPrice = secondClassPrice;
-    }
+    private Time TotalTime;
+    private Time ArrivalTime;
+    private Double TotalSecondClassPrice;
+    private List<TripBean> tripBeans = new ArrayList<>();
 
     public Time getDepartureTime() {
         return DepartureTime;
@@ -51,14 +19,6 @@ public class QueryResult {
 
     public void setDepartureTime(Time departureTime) {
         DepartureTime = departureTime;
-    }
-
-    public Time getArrivalTime() {
-        return ArrivalTime;
-    }
-
-    public void setArrivalTime(Time arrivalTime) {
-        ArrivalTime = arrivalTime;
     }
 
     public String getDepartureStation() {
@@ -75,5 +35,37 @@ public class QueryResult {
 
     public void setArrivalStation(String arrivalStation) {
         ArrivalStation = arrivalStation;
+    }
+
+    public Time getTotalTime() {
+        return TotalTime;
+    }
+
+    public void setTotalTime(Time totalTime) {
+        TotalTime = totalTime;
+    }
+
+    public Time getArrivalTime() {
+        return ArrivalTime;
+    }
+
+    public void setArrivalTime(Time arrivalTime) {
+        ArrivalTime = arrivalTime;
+    }
+
+    public Double getTotalSecondClassPrice() {
+        return TotalSecondClassPrice;
+    }
+
+    public void setTotalSecondClassPrice(Double totalSecondClassPrice) {
+        TotalSecondClassPrice = totalSecondClassPrice;
+    }
+
+    public List<TripBean> getTripBeans() {
+        return tripBeans;
+    }
+
+    public void setTripBeans(List<TripBean> tripBeans) {
+        this.tripBeans = tripBeans;
     }
 }
