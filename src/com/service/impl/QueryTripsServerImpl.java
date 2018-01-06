@@ -71,39 +71,37 @@ public class QueryTripsServerImpl implements QureyTripsServer {
     public List<QueryResult> getTransferPath(String StationA, String StationB) {
         List<QueryResult> queryResultList = new ArrayList<>();
         for (StationEntity station : stationList) {
-            List<QueryResult> firstQueryResultList = getDirectPath(StationA, station.getPinyin());
-            List<QueryResult> secondQueryResultList = getDirectPath(StationA, station.getPinyin());
-            if (firstQueryResultList.size() == 0 || secondQueryResultList.size() == 0) {
-                TripsEntity trip = getTripsByTname(firstQueryResultList.get(0).getTripBeans().get(0).getTname());
+            if (!station.getPinyin().equals(StationA) && !station.getPinyin().equals(StationB)) {
+                List<QueryResult> firstQueryResultList = getDirectPath(StationA, station.getPinyin());
+                List<QueryResult> secondQueryResultList = getDirectPath(station.getPinyin(), StationB);
+                if (firstQueryResultList.size() != 0 || secondQueryResultList.size() != 0) {
+                    int count = firstQueryResultList.size() < secondQueryResultList.size() ? firstQueryResultList.size() : secondQueryResultList.size();
+                    QueryResult queryResult = new QueryResult();
+                    List<TripBean> tripBeanList = new ArrayList<>();
+                    for (int i = 0; i < count; i++) {
+                        QueryResult queryResultA = firstQueryResultList.get(i);
+                        QueryResult queryResultB = secondQueryResultList.get(i);
+                        TripBean tripBeanA = queryResultA.getTripBeans().get(0);
+                        TripBean tripBeanB = queryResultB.getTripBeans().get(0);
+                        tripBeanList.add(tripBeanA);
+                        tripBeanList.add(tripBeanB);
 
-                QueryResult queryResult = new QueryResult();
-                List<TripBean> tripBeanList = new ArrayList<>();
-                TripBean tripBean = new TripBean();
-                tripBean.setTname(trip.getTname());
-                tripBean.setDepartureStation(StationA);
-                tripBean.setArrivalStation(StationB);
+                        queryResult.setDepartureStation(StationA);
+                        queryResult.setArrivalStation(StationB);
+                        Time DepartureTime = CompareTime(tripBeanA.getDepartureTime(), tripBeanB.getDepartureTime()) ? tripBeanB.getDepartureTime() : tripBeanA.getDepartureTime();
+                        queryResult.setDepartureTime(DepartureTime);
+                        Time ArrivalTime = CompareTime(tripBeanA.getDepartureTime(), tripBeanB.getDepartureTime()) ? tripBeanA.getDepartureTime() : tripBeanB.getDepartureTime();
+                        queryResult.setArrivalTime(ArrivalTime);
 
-                tripBean.setBusinessClassPrice(getTripPrice(trip, StationA, StationB, 0));
-                tripBean.setFirstClassPrice(getTripPrice(trip, StationA, StationB, 1));
-                tripBean.setSecondClassPrice(getTripPrice(trip, StationA, StationB, 2));
+                        queryResult.setTotalSecondClassPrice(tripBeanA.getSecondClassPrice() + tripBeanB.getSecondClassPrice());
+                        queryResult.setTotalTime(TimeAdd(tripBeanA.getTripTime(), tripBeanB.getTripTime()));
+                        queryResult.setTripBeans(tripBeanList);
+                        queryResultList.add(queryResult);
+                    }
 
-                Time departureTime = Timestamp2Time(trip.getDeparture());
-                tripBean.setDepartureTime(departureTime);
-                Time tripTime = getTripTime(trip, StationA, StationB);
-                tripBean.setTripTime(tripTime);
-                Time arrivalTime = TimeAdd(departureTime, tripTime);
-                tripBean.setArrivalTime(arrivalTime);
-                tripBeanList.add(tripBean);
-
-                queryResult.setDepartureStation(StationA);
-                queryResult.setArrivalStation(StationB);
-                queryResult.setDepartureTime(tripBean.getDepartureTime());
-                queryResult.setArrivalTime(tripBean.getArrivalTime());
-                queryResult.setTotalSecondClassPrice(tripBean.getSecondClassPrice());
-                queryResult.setTotalTime(tripBean.getTripTime());
-                queryResult.setTripBeans(tripBeanList);
-                queryResultList.add(queryResult);
+                }
             }
+
         }
 
         return queryResultList;
@@ -237,6 +235,22 @@ public class QueryTripsServerImpl implements QureyTripsServer {
         int Hours = timestamp.getHours();
         Time time = new Time(Hours, Minutes, Seconds);
         return time;
+    }
+
+    //比较两个时间，A>B返回True
+    private Boolean CompareTime(Time TimeA, Time TimeB) {
+        if (TimeA.getHours() > TimeB.getHours()) {
+            return true;
+        } else if (TimeA.getHours() == TimeB.getHours()) {
+            if (TimeA.getMinutes() > TimeB.getMinutes()) {
+                return true;
+            } else if (TimeA.getMinutes() == TimeB.getMinutes()) {
+                if (TimeA.getSeconds() > TimeB.getSeconds()) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
 
