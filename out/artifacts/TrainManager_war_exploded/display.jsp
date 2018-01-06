@@ -40,7 +40,10 @@
                 <img src="images/new_logo.png">
             </div>
             <div class="brand">
-                Jason
+                <%
+                    request.setCharacterEncoding("UTF-8");
+                %>
+                <s:property value="#session.userName"/>
             </div>
         </div>
     </a>
