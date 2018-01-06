@@ -8,6 +8,7 @@ public class QueryResult {
     private Time DepartureTime;
     private String DepartureStation;
     private String ArrivalStation;
+    private String TransferStation;
     private Time TotalTime;
     private Time ArrivalTime;
     private Double TotalSecondClassPrice;
@@ -67,5 +68,13 @@ public class QueryResult {
 
     public void setTripBeans(List<TripBean> tripBeans) {
         this.tripBeans = tripBeans;
+    }
+
+    public String getTransferStation() {
+        return TransferStation;
+    }
+
+    public void setTransferStation(String transferStation) {
+        TransferStation = transferStation;
     }
 }

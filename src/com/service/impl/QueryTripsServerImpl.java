@@ -96,6 +96,7 @@ public class QueryTripsServerImpl implements QureyTripsServer {
                         queryResult.setTotalSecondClassPrice(tripBeanA.getSecondClassPrice() + tripBeanB.getSecondClassPrice());
                         queryResult.setTotalTime(TimeAdd(tripBeanA.getTripTime(), tripBeanB.getTripTime()));
                         queryResult.setTripBeans(tripBeanList);
+                        queryResult.setTransferStation(station.getName());//换乘站名
                         queryResultList.add(queryResult);
                     }
 
