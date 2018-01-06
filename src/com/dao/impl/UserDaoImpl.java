@@ -25,7 +25,7 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
-    public int Login(String TelNum,String Password){
+    public String Login(String TelNum,String Password){
         Session session = new HibernateUtil().getSession();
         try{
             String hql = "from UsersEntity where telNum = ?";
@@ -35,15 +35,15 @@ public class UserDaoImpl implements UserDao {
             if(user != null){
                 String pwd = user.getPasswd();
                 if (pwd.equals(Password)){
-                    return user.getId();
+                    return user.getName();
                 }else {
-                    return 0;
+                    return null;
                 }
             } else
-                return 0;
+                return null;
         }catch (HibernateException e) {
             e.printStackTrace();
-            return 0;
+            return null;
         } finally {
             session.close();
         }

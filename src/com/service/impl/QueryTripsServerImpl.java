@@ -37,17 +37,19 @@ public class QueryTripsServerImpl implements QureyTripsServer {
                             tripBean.setTname(trip.getTname());
                             tripBean.setDepartureStation(StationA);
                             tripBean.setArrivalStation(StationB);
-                            tripBean.setBusinessClassPrice(getPrice(StationA, StationB, 0));
-                            tripBean.setFirstClassPrice(getPrice(StationA, StationB, 1));
-                            tripBean.setSecondClassPrice(getPrice(StationA, StationB, 2));
+
+                            tripBean.setBusinessClassPrice(getTripPrice(trip, StationA, StationB, 0));
+                            tripBean.setFirstClassPrice(getTripPrice(trip, StationA, StationB, 1));
+                            tripBean.setSecondClassPrice(getTripPrice(trip, StationA, StationB, 2));
+
                             Time departureTime = Timestamp2Time(trip.getDeparture());
                             tripBean.setDepartureTime(departureTime);
-                            Time tripTime = getTimeByPinyin(StationA,StationB);
+                            Time tripTime = getTripTime(trip, StationA, StationB);
                             tripBean.setTripTime(tripTime);
-                            Time arrivalTime = TimeAdd(departureTime,tripTime);
+                            Time arrivalTime = TimeAdd(departureTime, tripTime);
                             tripBean.setArrivalTime(arrivalTime);
-
                             tripBeanList.add(tripBean);
+
                             queryResult.setDepartureStation(StationA);
                             queryResult.setArrivalStation(StationB);
                             queryResult.setDepartureTime(tripBean.getDepartureTime());
@@ -68,6 +70,42 @@ public class QueryTripsServerImpl implements QureyTripsServer {
     @Override
     public List<QueryResult> getTransferPath(String StationA, String StationB) {
         List<QueryResult> queryResultList = new ArrayList<>();
+        for (StationEntity station : stationList) {
+            List<QueryResult> firstQueryResultList = getDirectPath(StationA, station.getPinyin());
+            List<QueryResult> secondQueryResultList = getDirectPath(StationA, station.getPinyin());
+            if (firstQueryResultList.size() == 0 || secondQueryResultList.size() == 0) {
+                TripsEntity trip = getTripsByTname(firstQueryResultList.get(0).getTripBeans().get(0).getTname());
+
+                QueryResult queryResult = new QueryResult();
+                List<TripBean> tripBeanList = new ArrayList<>();
+                TripBean tripBean = new TripBean();
+                tripBean.setTname(trip.getTname());
+                tripBean.setDepartureStation(StationA);
+                tripBean.setArrivalStation(StationB);
+
+                tripBean.setBusinessClassPrice(getTripPrice(trip, StationA, StationB, 0));
+                tripBean.setFirstClassPrice(getTripPrice(trip, StationA, StationB, 1));
+                tripBean.setSecondClassPrice(getTripPrice(trip, StationA, StationB, 2));
+
+                Time departureTime = Timestamp2Time(trip.getDeparture());
+                tripBean.setDepartureTime(departureTime);
+                Time tripTime = getTripTime(trip, StationA, StationB);
+                tripBean.setTripTime(tripTime);
+                Time arrivalTime = TimeAdd(departureTime, tripTime);
+                tripBean.setArrivalTime(arrivalTime);
+                tripBeanList.add(tripBean);
+
+                queryResult.setDepartureStation(StationA);
+                queryResult.setArrivalStation(StationB);
+                queryResult.setDepartureTime(tripBean.getDepartureTime());
+                queryResult.setArrivalTime(tripBean.getArrivalTime());
+                queryResult.setTotalSecondClassPrice(tripBean.getSecondClassPrice());
+                queryResult.setTotalTime(tripBean.getTripTime());
+                queryResult.setTripBeans(tripBeanList);
+                queryResultList.add(queryResult);
+            }
+        }
+
         return queryResultList;
     }
 
@@ -132,6 +170,15 @@ public class QueryTripsServerImpl implements QureyTripsServer {
         return new TripsEntity();
     }
 
+    private TripsEntity getTripsByTname(String name) {
+        for (TripsEntity trip : tripsList) {
+            if (trip.getTname() == name) {
+                return trip;
+            }
+        }
+        return new TripsEntity();
+    }
+
     private Time getTimeByPinyin(String StationA, String StationB) {
         StationEntity stationA = getStationByPinyin(StationA);
         StationEntity stationB = getStationByPinyin(StationB);
@@ -145,16 +192,50 @@ public class QueryTripsServerImpl implements QureyTripsServer {
         return new Time(0, 0, 0);
     }
 
+    private Time getTripTime(TripsEntity tripsEntity, String StationA, String StationB) {
+        Time time = new Time(0, 0, 0);
+        int index = 0;
+        String passby = tripsEntity.getPassby();
+        String[] passByStations = passby.split(",");
+        for (int i = 1; i < passByStations.length; i++) {
+            if (passByStations[i].equals(StationA)) {
+                index = i;
+                break;
+            }
+        }
+        for (int i = index; !passByStations[i].equals(StationB); i++) {
+            time = TimeAdd(time, getTimeByPinyin(passByStations[i], passByStations[i + 1]));
+        }
+        return time;
+    }
+
+    private Double getTripPrice(TripsEntity tripsEntity, String StationA, String StationB, int Type) {
+        double price = 0;
+        int index = 0;
+        String passby = tripsEntity.getPassby();
+        String[] passByStations = passby.split(",");
+        for (int i = 1; i < passByStations.length; i++) {
+            if (passByStations[i].equals(StationA)) {
+                index = i;
+                break;
+            }
+        }
+        for (int i = index; !passByStations[i].equals(StationB); i++) {
+            price += getPrice(passByStations[i], passByStations[i + 1], Type);
+        }
+        return price;
+    }
+
     private Time TimeAdd(Time TimeA, Time TimeB) {
         Time time = new Time(TimeA.getHours() + TimeB.getHours(), TimeA.getMinutes() + TimeB.getMinutes(), TimeA.getSeconds() + TimeB.getSeconds());
         return time;
     }
 
-    private Time Timestamp2Time(Timestamp timestamp){
+    private Time Timestamp2Time(Timestamp timestamp) {
         int Seconds = timestamp.getSeconds();
         int Minutes = timestamp.getMinutes();
         int Hours = timestamp.getHours();
-        Time time = new Time(Hours,Minutes,Seconds);
+        Time time = new Time(Hours, Minutes, Seconds);
         return time;
     }
 }

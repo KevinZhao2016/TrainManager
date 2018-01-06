@@ -6,7 +6,7 @@ import java.util.List;
 public interface UserDao {
     public List ListUser();
 
-    public int Login(String TelNum,String Password);
+    public String Login(String TelNum,String Password);
 
     public int Register(UsersEntity user);
 }

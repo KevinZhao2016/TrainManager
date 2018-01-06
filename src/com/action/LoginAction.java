@@ -1,6 +1,9 @@
 package com.action;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.service.impl.LoginServerImpl;
+
+import java.util.Map;
 
 public class LoginAction {
     private String password;
@@ -21,7 +24,11 @@ public class LoginAction {
 
     public String execute() throws Exception {
         LoginServerImpl loginServerImpl = new LoginServerImpl();
-        if (loginServerImpl.Login(telNum,password) != 0) {
+        String userName = loginServerImpl.Login(telNum,password);
+        if (userName != null) {
+            ActionContext actionContext = ActionContext.getContext();
+            Map session = actionContext.getSession();
+            session.put("userName",userName);
             return "success";
         } else
             return "fail";
