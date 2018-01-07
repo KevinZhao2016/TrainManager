@@ -3,15 +3,15 @@ package com.entity;
 import java.sql.Time;
 
 public class TripBean {
-    private String Tname;
-    private Double BusinessClassPrice;
-    private Double FirstClassPrice;
-    private Double SecondClassPrice;
-    private Time DepartureTime;
-    private Time ArrivalTime;
-    private Time TripTime;
-    private String DepartureStation;
-    private String ArrivalStation;
+    private String Tname;//列车号
+    private Double BusinessClassPrice;//商务座价格
+    private Double FirstClassPrice;//一等座价格
+    private Double SecondClassPrice;//二等座价格
+    private Time DepartureTime;//本列车上车时间
+    private Time ArrivalTime;//本列车到达时间
+    private Time TripTime;//本列车乘坐时间
+    private String DepartureStation;//本列车上车站
+    private String ArrivalStation;//本列车下车站
 
     public String getTname() {
         return Tname;

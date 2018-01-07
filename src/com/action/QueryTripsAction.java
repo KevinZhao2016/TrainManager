@@ -61,19 +61,23 @@ public class QueryTripsAction {
         List<QueryResult> queryResultList;
         QueryTripsServerImpl queryTripsServer = new QueryTripsServerImpl();
         queryResultList = queryTripsServer.getDirectPath(getDepartureStation(), getArrivalStation());
-
+        //查找直达车
         if (queryResultList.size() == 0) {
+            //未找到直达车，搜索换乘车次
             queryResultList = queryTripsServer.getTransferPath(getDepartureStation(), getArrivalStation());
             if (queryResultList.size() == 0){
+                //均未找到
                 session.put("Type",0);
                 return "fail";
             }else{
+                //找到换乘车次
                 setQueryResults(queryResultList);
                 session.put("queryResultList", queryResultList);
                 session.put("Type",2);
                 return "fail";
             }
         }else{
+            //找到直达车
             setQueryResults(queryResultList);
             session.put("queryResultList", queryResultList);
             session.put("Type", 1);

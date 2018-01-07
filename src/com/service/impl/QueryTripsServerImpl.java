@@ -19,11 +19,12 @@ public class QueryTripsServerImpl implements QureyTripsServer {
     private static List<TripsEntity> tripsList = tripsDaoImpl.ListTrips();
     private static List<RouteEntity> routeList = routeDaoImpl.ListRoute();
 
-
+    //查找直达方案
     @Override
     public List<QueryResult> getDirectPath(String StationA, String StationB) {
         List<QueryResult> queryResultList = new ArrayList<>();
         if (StationA.equals(StationB)) {
+            //保证出发站不等于终点站
             return queryResultList;
         }
         for (TripsEntity trip : tripsList) {
@@ -35,23 +36,27 @@ public class QueryTripsServerImpl implements QureyTripsServer {
                         if (StationB.equals(passByStations[j])) {
                             QueryResult queryResult = new QueryResult();
                             List<TripBean> tripBeanList = new ArrayList<>();
-                            TripBean tripBean = new TripBean();
+                            TripBean tripBean = new TripBean();//一辆车的信息
                             tripBean.setTname(trip.getTname());
                             tripBean.setDepartureStation(getStationByPinyin(StationA).getName());
                             tripBean.setArrivalStation(getStationByPinyin(StationB).getName());
-
+                            //商务座价格
                             tripBean.setBusinessClassPrice(getTripPrice(trip, StationA, StationB, 0));
+                            //一等座价格
                             tripBean.setFirstClassPrice(getTripPrice(trip, StationA, StationB, 1));
+                            //二等座价格
                             tripBean.setSecondClassPrice(getTripPrice(trip, StationA, StationB, 2));
-
+                            //出发时间
                             Time departureTime = Timestamp2Time(trip.getDeparture());
                             tripBean.setDepartureTime(departureTime);
                             Time tripTime = getTripTime(trip, StationA, StationB);
+                            //乘坐本列车的时间
                             tripBean.setTripTime(tripTime);
+                            //本列车下车时间
                             Time arrivalTime = TimeAdd(departureTime, tripTime);
                             tripBean.setArrivalTime(arrivalTime);
                             tripBeanList.add(tripBean);
-
+                            //queryResult为本方案总体信息
                             queryResult.setDepartureStation(getStationByPinyin(StationA).getName());
                             queryResult.setArrivalStation(getStationByPinyin(StationB).getName());
                             queryResult.setDepartureTime(tripBean.getDepartureTime());
@@ -69,10 +74,12 @@ public class QueryTripsServerImpl implements QureyTripsServer {
         return queryResultList;
     }
 
+    //查找换乘车辆
     @Override
     public List<QueryResult> getTransferPath(String StationA, String StationB) {
         List<QueryResult> queryResultList = new ArrayList<>();
         for (StationEntity station : stationList) {
+            //遍历每一个车站，作为中转站
             if (!station.getPinyin().equals(StationA) && !station.getPinyin().equals(StationB)) {
                 List<QueryResult> firstQueryResultList = getDirectPath(StationA, station.getPinyin());
                 List<QueryResult> secondQueryResultList = getDirectPath(station.getPinyin(), StationB);
@@ -82,20 +89,24 @@ public class QueryTripsServerImpl implements QureyTripsServer {
                     List<TripBean> tripBeanList = new ArrayList<>();
                     for (int i = 0; i < count; i++) {
                         QueryResult queryResultA = firstQueryResultList.get(i);
+                        //第一辆车信息
                         QueryResult queryResultB = secondQueryResultList.get(i);
+                        //第二辆车信息
                         TripBean tripBeanA = queryResultA.getTripBeans().get(0);
                         TripBean tripBeanB = queryResultB.getTripBeans().get(0);
                         tripBeanList.add(tripBeanA);
                         tripBeanList.add(tripBeanB);
-
+                        //换乘方案总体信息
                         queryResult.setDepartureStation(getStationByPinyin(StationA).getName());
                         queryResult.setArrivalStation(getStationByPinyin(StationB).getName());
-                        Time DepartureTime = tripBeanA.getDepartureTime();
+                        Time DepartureTime = tripBeanA.getDepartureTime();//总出发时间
                         queryResult.setDepartureTime(DepartureTime);
+                        //总到达时间
                         Time ArrivalTime = CompareTime(tripBeanA.getArrivalTime(), tripBeanB.getArrivalTime()) ? tripBeanA.getArrivalTime() : tripBeanB.getArrivalTime();
                         queryResult.setArrivalTime(ArrivalTime);
-
+                        //总二等座价格
                         queryResult.setTotalSecondClassPrice(tripBeanA.getSecondClassPrice() + tripBeanB.getSecondClassPrice());
+                        //总时长
                         queryResult.setTotalTime(TimeAdd(tripBeanA.getTripTime(), tripBeanB.getTripTime()));
                         queryResult.setTripBeans(tripBeanList);
                         queryResult.setTransferStation(station.getName());//换乘站名
@@ -111,27 +122,7 @@ public class QueryTripsServerImpl implements QureyTripsServer {
     }
 
 
-    public List<StationEntity> getTransferStation(List PathList) {
-        List<StationEntity> list = new ArrayList<StationEntity>();
-
-        StationEntity station = getStationByPinyin("ningbo");
-        list.add(station);
-        station = getStationByPinyin("dezhoudong");
-        list.add(station);
-        return list;
-    }
-
-
-    public List<TripsEntity> getTrips(List PathList) {
-        List<TripsEntity> list = new ArrayList<TripsEntity>();
-
-        TripsEntity trips = getTripsById(2);
-        list.add(trips);
-        trips = getTripsById(5);
-        list.add(trips);
-        return list;
-    }
-
+    //根据起点终点获取价格，Type 0：商务座 1：一等座 2：二等座
     public Double getPrice(String StationA, String StationB, int Type) {
         StationEntity stationA = getStationByPinyin(StationA);
         StationEntity stationB = getStationByPinyin(StationB);
@@ -162,24 +153,7 @@ public class QueryTripsServerImpl implements QureyTripsServer {
         return new StationEntity();
     }
 
-    private TripsEntity getTripsById(int tid) {
-        for (TripsEntity trip : tripsList) {
-            if (trip.getTid() == tid) {
-                return trip;
-            }
-        }
-        return new TripsEntity();
-    }
-
-    private TripsEntity getTripsByTname(String name) {
-        for (TripsEntity trip : tripsList) {
-            if (trip.getTname() == name) {
-                return trip;
-            }
-        }
-        return new TripsEntity();
-    }
-
+    //根据起点终点获得时间
     private Time getTimeByPinyin(String StationA, String StationB) {
         StationEntity stationA = getStationByPinyin(StationA);
         StationEntity stationB = getStationByPinyin(StationB);
@@ -193,6 +167,7 @@ public class QueryTripsServerImpl implements QureyTripsServer {
         return new Time(0, 0, 0);
     }
 
+    //根据起点终点和车次获得时间
     private Time getTripTime(TripsEntity tripsEntity, String StationA, String StationB) {
         Time time = new Time(0, 0, 0);
         int index = 0;
@@ -210,6 +185,7 @@ public class QueryTripsServerImpl implements QureyTripsServer {
         return time;
     }
 
+    //根据起点终点和车次获得价格
     private Double getTripPrice(TripsEntity tripsEntity, String StationA, String StationB, int Type) {
         double price = 0;
         int index = 0;
@@ -227,11 +203,13 @@ public class QueryTripsServerImpl implements QureyTripsServer {
         return price;
     }
 
+    //两个Time相加
     private Time TimeAdd(Time TimeA, Time TimeB) {
         Time time = new Time(TimeA.getHours() + TimeB.getHours(), TimeA.getMinutes() + TimeB.getMinutes(), TimeA.getSeconds() + TimeB.getSeconds());
         return time;
     }
 
+    //将Timestamp转换为Time
     private Time Timestamp2Time(Timestamp timestamp) {
         int Seconds = timestamp.getSeconds();
         int Minutes = timestamp.getMinutes();

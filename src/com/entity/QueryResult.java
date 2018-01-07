@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QueryResult {
-    private Time DepartureTime;
-    private String DepartureStation;
-    private String ArrivalStation;
-    private String TransferStation;
-    private Time TotalTime;
-    private Time ArrivalTime;
-    private Double TotalSecondClassPrice;
-    private List<TripBean> tripBeans = new ArrayList<>();
+    private Time DepartureTime;//总出发时间
+    private String DepartureStation;//总出发站
+    private String ArrivalStation;//总到达站
+    private String TransferStation;//换乘站
+    private Time TotalTime;//总时间
+    private Time ArrivalTime;//总到达时间
+    private Double TotalSecondClassPrice;//总二等座价格
+    private List<TripBean> tripBeans = new ArrayList<>();//本方案中每辆车的信息
 
     public Time getDepartureTime() {
         return DepartureTime;
