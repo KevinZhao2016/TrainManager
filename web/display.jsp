@@ -66,9 +66,9 @@
                                         <thead>
                                         <tr>
                                             <th>车次</th>
-                                            <th  onclick="sortAble(this,'tableSort', 1,'date')" style="cursor: pointer;">出发时间</th>
-                                            <th onclick="sortAble(this,'tableSort', 2,'date')" style="cursor: pointer;">到达时间</th>
-                                            <th  onclick="sortAble(this,'tableSort', 3,'date')" style="cursor: pointer;">历时</th>
+                                            <th  onclick="sortAble(this,'tableSort', 1,'String')" style="cursor: pointer;">出发时间</th>
+                                            <th  onclick="sortAble(this,'tableSort', 2,'String')" style="cursor: pointer;">到达时间</th>
+                                            <th  onclick="sortAble(this,'tableSort', 3,'String')" style="cursor: pointer;">历时</th>
                                             <th>商务座</th>
                                             <th>一等座</th>
                                             <th>二等座</th>

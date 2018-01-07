@@ -23,7 +23,9 @@ public class QueryTripsServerImpl implements QureyTripsServer {
     @Override
     public List<QueryResult> getDirectPath(String StationA, String StationB) {
         List<QueryResult> queryResultList = new ArrayList<>();
-
+        if (StationA.equals(StationB)) {
+            return queryResultList;
+        }
         for (TripsEntity trip : tripsList) {
             String passby = trip.getPassby();
             String[] passByStations = passby.split(",");

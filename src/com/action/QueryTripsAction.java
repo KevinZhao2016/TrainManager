@@ -61,13 +61,21 @@ public class QueryTripsAction {
         List<QueryResult> queryResultList;
         QueryTripsServerImpl queryTripsServer = new QueryTripsServerImpl();
         queryResultList = queryTripsServer.getDirectPath(getDepartureStation(), getArrivalStation());
-        if (queryResultList.size()==0){
-            return "fail";
-        }else {
-        setQueryResults(queryResultList);
-        setType(queryResultList.get(0).getTripBeans().size());
-        session.put("queryResultList",queryResultList);
-        session.put("Type",getType());
+
+        if (queryResultList.size() == 0) {
+            queryResultList = queryTripsServer.getTransferPath(getDepartureStation(), getArrivalStation());
+            if (queryResultList.size() == 0){
+                return "fail";
+            }else{
+                setQueryResults(queryResultList);
+                session.put("queryResultList", queryResultList);
+                session.put("Type",2);
+                return "success";
+            }
+        }else{
+            setQueryResults(queryResultList);
+            session.put("queryResultList", queryResultList);
+            session.put("Type", 1);
             return "success";
         }
     }
