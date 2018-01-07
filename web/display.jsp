@@ -62,7 +62,7 @@
                             <div class="row">
                                 <div id="container">
 
-                                    <table class="zebra" id="tableSort">
+                                    <table class="zebra zebra_1" id="tableSort">
                                         <thead>
                                         <tr>
                                             <th>车次</th>

@@ -55,7 +55,7 @@
                                     </div>
                                     <div id="center_right">
                                         很抱歉，按您的查询条件，当前未找到符合条件的列车。
-                                        您可以使用<a href="transfer.jsp">接续换乘</a>功能，查询途中换乘一次的部分列车余票情况。
+                                        您可以使用<a href="#" onclick="jump()">接续换乘</a>功能，查询途中换乘一次的部分列车余票情况。
                                     </div>
                                 </div>
                             </div>
@@ -72,6 +72,15 @@
         </div>
     </div>
 </div>
-
+<script>
+    function jump() {
+        var type = <%=session.getAttribute("Type")%>;
+        if (type==2){
+            window.location.href = "transfer.jsp";
+        }else {
+            window.location.href = "query_fail_2.jsp"
+        }
+    }
+</script>
 </body>
 </html>

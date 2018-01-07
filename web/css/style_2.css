@@ -72,11 +72,14 @@ table {
 	font-weight:normal;
 }
 
-.zebra tbody tr:nth-child(4n+3) {
+.zebra_1 tbody tr:nth-child(4n+3) {
 	background: #000 !important;
 	color:#fff;
 }
-
+.zebra_2 tbody tr:nth-child(5n+1){
+	background: #000 !important;
+	color:#fff;
+}
 .zebra tr:hover *{
 	background: #eeeeee;
 	color:#000;
@@ -88,4 +91,8 @@ table {
 }
 .ticket_font{
 	color: #5bc0de;
+}
+.ticket_title  td{
+	border:none;
+	text-align: center;
 }

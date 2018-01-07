@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: lipen
@@ -33,7 +34,10 @@
                 <img src="images/new_logo.png">
             </div>
             <div class="brand">
-                Jason
+                <%
+                    request.setCharacterEncoding("UTF-8");
+                %>
+                <s:property value="#session.userName"/>
             </div>
         </div>
     </a>
@@ -65,6 +69,7 @@
                                             <option value="ningbo"> 宁波 </option>
                                             <option value="nanjingnan"> 南京南 </option>
                                             <option value="jinan"> 济南 </option>
+                                            <option value="lasa"> 拉萨 </option>
                                         </select>
                                     </div>
                                 </div>
@@ -80,6 +85,7 @@
                                             <option value="ningbo"> 宁波 </option>
                                             <option value="nanjingnan"> 南京南 </option>
                                             <option value="jinan"> 济南 </option>
+                                            <option value="lasa"> 拉萨 </option>
                                         </select>
                                     </div>
                                 </div>

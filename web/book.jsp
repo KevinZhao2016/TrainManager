@@ -69,6 +69,7 @@
                                             <option value="ningbo"> 宁波 </option>
                                             <option value="nanjingnan"> 南京南 </option>
                                             <option value="jinan"> 济南 </option>
+                                            <option value="lasa"> 拉萨 </option>
                                         </select>
                                     </div>
                                 </div>
@@ -84,6 +85,7 @@
                                             <option value="ningbo"> 宁波 </option>
                                             <option value="nanjingnan"> 南京南 </option>
                                             <option value="jinan"> 济南 </option>
+                                            <option value="lasa"> 拉萨 </option>
                                         </select>
                                     </div>
                                 </div>

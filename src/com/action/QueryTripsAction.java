@@ -65,12 +65,13 @@ public class QueryTripsAction {
         if (queryResultList.size() == 0) {
             queryResultList = queryTripsServer.getTransferPath(getDepartureStation(), getArrivalStation());
             if (queryResultList.size() == 0){
+                session.put("Type",0);
                 return "fail";
             }else{
                 setQueryResults(queryResultList);
                 session.put("queryResultList", queryResultList);
                 session.put("Type",2);
-                return "success";
+                return "fail";
             }
         }else{
             setQueryResults(queryResultList);

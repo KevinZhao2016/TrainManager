@@ -37,8 +37,8 @@ public class QueryTripsServerImpl implements QureyTripsServer {
                             List<TripBean> tripBeanList = new ArrayList<>();
                             TripBean tripBean = new TripBean();
                             tripBean.setTname(trip.getTname());
-                            tripBean.setDepartureStation(StationA);
-                            tripBean.setArrivalStation(StationB);
+                            tripBean.setDepartureStation(getStationByPinyin(StationA).getName());
+                            tripBean.setArrivalStation(getStationByPinyin(StationB).getName());
 
                             tripBean.setBusinessClassPrice(getTripPrice(trip, StationA, StationB, 0));
                             tripBean.setFirstClassPrice(getTripPrice(trip, StationA, StationB, 1));
@@ -52,8 +52,8 @@ public class QueryTripsServerImpl implements QureyTripsServer {
                             tripBean.setArrivalTime(arrivalTime);
                             tripBeanList.add(tripBean);
 
-                            queryResult.setDepartureStation(StationA);
-                            queryResult.setArrivalStation(StationB);
+                            queryResult.setDepartureStation(getStationByPinyin(StationA).getName());
+                            queryResult.setArrivalStation(getStationByPinyin(StationB).getName());
                             queryResult.setDepartureTime(tripBean.getDepartureTime());
                             queryResult.setArrivalTime(tripBean.getArrivalTime());
                             queryResult.setTotalSecondClassPrice(tripBean.getSecondClassPrice());
@@ -88,11 +88,11 @@ public class QueryTripsServerImpl implements QureyTripsServer {
                         tripBeanList.add(tripBeanA);
                         tripBeanList.add(tripBeanB);
 
-                        queryResult.setDepartureStation(StationA);
-                        queryResult.setArrivalStation(StationB);
-                        Time DepartureTime = CompareTime(tripBeanA.getDepartureTime(), tripBeanB.getDepartureTime()) ? tripBeanB.getDepartureTime() : tripBeanA.getDepartureTime();
+                        queryResult.setDepartureStation(getStationByPinyin(StationA).getName());
+                        queryResult.setArrivalStation(getStationByPinyin(StationB).getName());
+                        Time DepartureTime = tripBeanA.getDepartureTime();
                         queryResult.setDepartureTime(DepartureTime);
-                        Time ArrivalTime = CompareTime(tripBeanA.getDepartureTime(), tripBeanB.getDepartureTime()) ? tripBeanA.getDepartureTime() : tripBeanB.getDepartureTime();
+                        Time ArrivalTime = CompareTime(tripBeanA.getArrivalTime(), tripBeanB.getArrivalTime()) ? tripBeanA.getArrivalTime() : tripBeanB.getArrivalTime();
                         queryResult.setArrivalTime(ArrivalTime);
 
                         queryResult.setTotalSecondClassPrice(tripBeanA.getSecondClassPrice() + tripBeanB.getSecondClassPrice());

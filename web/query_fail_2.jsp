@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>查询结果</title>
+    <title>查询失败</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
@@ -55,7 +55,6 @@
                                     </div>
                                     <div id="center_right">
                                         很抱歉，按您的查询条件，当前未找到符合条件的列车。
-                                        您可以使用<a href="transfer.jsp">接续换乘</a>功能，查询途中换乘一次的部分列车余票情况。
                                     </div>
                                 </div>
                             </div>
