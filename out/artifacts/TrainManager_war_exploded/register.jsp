@@ -46,7 +46,7 @@
             <form action="/action/register" class="sign_in_form" method="post" onsubmit="return sign_up_deteciton()">
                 <h2>注册</h2>
                 <div class="form-group">
-                    <div class="alert alert-success" role="alert"style="display: none">您的信息正在提交</div>
+                    <div class="alert alert-success" role="alert" style="display: none" id="show_div">您的信息正在提交</div>
                 </div>
                 <div class="form-group">
                     <!--<label for="username" class="sr-only">Name</label>-->

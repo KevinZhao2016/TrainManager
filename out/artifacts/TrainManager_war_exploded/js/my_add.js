@@ -19,6 +19,8 @@ function sign_up_deteciton() {
         alert('两次输入密码不一致！');
         return false;
     }else {
+        var showdiv = document.getElementById('show_div');
+        showdiv.style.display="block";
         return true;
     }
 }
@@ -36,6 +38,16 @@ function sign_in_detection() {
         return false;
     }else if(!pwd_reg.exec(pwd)){
         alert('密码不正确！');
+        return false;
+    }else {
+        return true;
+    }
+}
+function book_detection() {
+    var depar = document.getElementsByName('DepartureStation');
+    var arriv = document.getElementsByName('ArrivalStation');
+    if(depar.value==1||arriv.value==1){
+        alert("请选择车站！");
         return false;
     }else {
         return true;

@@ -20,9 +20,10 @@
     <!-- CSS Files -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/paper-bootstrap-wizard.css" rel="stylesheet" />
-
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="css/demo.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/my_add.js"></script>
 </head>
 
 <body>
@@ -48,7 +49,7 @@
                 <!--      Wizard container        -->
                 <div class="wizard-container">
                     <div class="card wizard-card">
-                        <form action="/action/query.action" method="post">
+                        <form action="/action/query.action" method="post" onsubmit="return book_detection()">
                             <div class="wizard-header">
                                 <h3 class="wizard-title">车票查询</h3>
                                 <p class="category">Query ticket</p>
@@ -61,7 +62,7 @@
                                     <div class="form-group">
                                         <label>出发地</label><br>
                                         <select name="DepartureStation" class="form-control" required>
-                                            <option disabled="" selected="">- 城市 -</option>
+                                            <option disabled="" selected="" value="1">- 城市 -</option>
                                             <option value="hangzhoudong"> 杭州东 </option>
                                             <option value="dezhoudong"> 德州东 </option>
                                             <option value="shanghaihongqiao"> 上海虹桥 </option>
@@ -77,7 +78,7 @@
                                     <div class="form-group">
                                         <label>目的地</label><br>
                                         <select name="ArrivalStation" class="form-control" required>
-                                            <option disabled="" selected="">- 城市 -</option>
+                                            <option disabled="" selected="" value="1">- 城市 -</option>
                                             <option value="hangzhoudong"> 杭州东 </option>
                                             <option value="dezhoudong"> 德州东 </option>
                                             <option value="shanghaihongqiao"> 上海虹桥 </option>
