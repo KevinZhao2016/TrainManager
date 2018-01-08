@@ -41,15 +41,15 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <!-- Start Sign In Form -->
-            <form action="/action/login.action" class="sign_in_form"method="post">
+            <form action="/action/login.action" class="sign_in_form"method="post" onsubmit="return sign_in_detection()">
                 <h2>登录</h2>
                 <div class="form-group">
                     <label for="telNum" class="sr-only">telNum</label>
-                    <input type="text" class="form-control" id="telNum" name="telNum" placeholder="手机号" autocomplete="off">
+                    <input type="text" class="form-control" id="telNum" name="telNum" placeholder="手机号" autocomplete="off" required>
                 </div>
                 <div class="form-group">
                     <label for="password" class="sr-only">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="密码" autocomplete="off">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="密码" autocomplete="off" required>
                 </div>
                 <div class="form-group">
                     <label for="remember"><input type="checkbox" id="remember"> 记住我</label>
@@ -81,7 +81,7 @@
 <!-- Main JS -->
 <script src="js/main.js"></script>
 
-
+<script src="js/my_add.js"></script>
 </body>
 </body>
 </html>

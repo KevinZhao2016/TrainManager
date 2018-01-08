@@ -96,3 +96,8 @@ table {
 	border:none;
 	text-align: center;
 }
+.choose_sort{
+	float: right;
+	margin-bottom: 10px;
+	width: 200px;
+}

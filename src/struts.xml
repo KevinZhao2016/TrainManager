@@ -12,8 +12,8 @@
         </action>
         <action name="login" class="com.action.LoginAction" method="execute">
             <result name="success" type="redirect">/book.jsp</result>
-            <result name="fail" type="json">/WEB-INF/result/login_fail.jsp</result>
-            <!--<result name="fail">/WEB-INF/result/login_fail.jsp</result>-->
+            <!--<result name="fail" type="json">/WEB-INF/result/login_fail.jsp</result>-->
+            <result name="fail">/WEB-INF/result/login_fail.jsp</result>
         </action>
 
         <action name="query" class="com.action.QueryTripsAction" method="execute">

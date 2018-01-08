@@ -34,7 +34,7 @@ public class QueryTripsServerImpl implements QureyTripsServer {
                 if (StationA.equals(passByStations[i])) {
                     for (int j = i; j < passByStations.length; j++) {
                         if (StationB.equals(passByStations[j])) {
-                            queryResultList = setQueryList(StationA, StationB, trip);
+                            queryResultList.add(setQueryResult(StationA, StationB, trip));
                         }
                     }
                 }
@@ -91,8 +91,7 @@ public class QueryTripsServerImpl implements QureyTripsServer {
     }
 
     //设置直达方案的具体信息
-    private List<QueryResult> setQueryList(String StationA, String StationB, TripsEntity trip) {
-        List<QueryResult> queryResultList = new ArrayList<>();
+    private QueryResult setQueryResult(String StationA, String StationB, TripsEntity trip) {
         QueryResult queryResult = new QueryResult();
         List<TripBean> tripBeanList = new ArrayList<>();
         TripBean tripBean = new TripBean();//一辆车的信息
@@ -124,8 +123,8 @@ public class QueryTripsServerImpl implements QureyTripsServer {
         queryResult.setTotalSecondClassPrice(tripBean.getSecondClassPrice());
         queryResult.setTotalTime(tripBean.getTripTime());
         queryResult.setTripBeans(tripBeanList);
-        queryResultList.add(queryResult);
-        return queryResultList;
+
+        return queryResult;
     }
 
     //根据起点终点获取价格，Type 0：商务座 1：一等座 2：二等座

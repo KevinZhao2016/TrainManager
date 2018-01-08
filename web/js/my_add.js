@@ -1,31 +1,43 @@
 function sign_up_deteciton() {
-    var name = document.getElementById("username");
-    var tel = document.getElementById('tel');
-    var pass = document.getElementById('password');
-    var rpass = document.getElementById('re-password');
-    var nameval = name.value.replace(/(^\s*)|(\s*$)/g, '');
-    var telval = tel.value.replace(/(^\s*)|(\s*$)/g, '');
-    var passval = pass.value.replace(/(^\s*)|(\s*$)/g, '');
-    var repassval = rpass.value.replace(/(^\s*)|(\s*$)/g, '');
-    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-    if(nameval.length==0||telval.length==0||passval==0){
+    var tel_reg=/^[1][3,4,5,7,8][0-9]{9}$/;
+    var pwd_reg=/^(\w){6,20}$/;
+    var username=document.getElementById("username").value;
+    var tel = document.getElementById("tel").value;
+    var pwd = document.getElementById("password").value;
+    var repwd = document.getElementById("re-password").value;
+    if (username.replace(/(^\s*)|(\s*$)/g, "")== ""||tel.replace(/(^s*)|(s*$)/g, "").length ==""
+    ||pwd.replace(/(^s*)|(s*$)/g, "").length ==""||repwd.replace(/(^s*)|(s*$)/g, "").length ==""){
         alert("输入不能为空！");
         return false;
-    }else if(!myreg.test(telval)){
-        alert("请输入正确的手机号码！");
+    }else if (!tel_reg.exec(tel)){
+        alert('请输入有效的手机号码！');
         return false;
+    }else if(!pwd_reg.exec(pwd)){
+        alert('密码输入6-20个字母、数字、下划线 ！');
+        return false;
+    }else if(repwd != pwd){
+        alert('两次输入密码不一致！');
+        return false;
+    }else {
+        return true;
+    }
 }
-    else if (passval.length<4 || passval.length>16){
-        alert("密码的长度必须在4-16个字符");
-        pass.select();
+function sign_in_detection() {
+    var tel_reg=/^[1][3,4,5,7,8][0-9]{9}$/;
+    var tel = document.getElementById("telNum").value;
+    var pwd = document.getElementById("password").value;
+    var pwd_reg=/^(\w){6,20}$/;
+    if(tel.replace(/(^s*)|(s*$)/g, "").length ==""
+        ||pwd.replace(/(^s*)|(s*$)/g, "").length ==""){
+        alert("输入不能为空！");
         return false;
-    }else if(passval!=repassval){
-        alert("两次密码输入不一致");
-        rpass.select();
+    }else if (!tel_reg.exec(tel)){
+        alert('请输入有效的手机号码！');
         return false;
-    } else {
-        show = document.getElementsByClassName('alert');
-        show[0].style.display = "block";
+    }else if(!pwd_reg.exec(pwd)){
+        alert('密码不正确！');
+        return false;
+    }else {
         return true;
     }
 }
@@ -54,7 +66,9 @@ function sortAble(th, tableId, iCol, dataType) {
     var aTrs = new Array;
     //将得到的行放入数组，备用
     for (var i = 0; i < colRows.length; i++) {
-        aTrs.push(colRows[i]);
+        if ($(colRows[i]).attr("group") != undefined) {
+            aTrs.push(colRows[i]);
+        }
     }
     //判断上一次排列的列和现在需要排列的是否同一个。
     var thCol = $(table.tHead.rows[0].cells[iCol]);
@@ -64,7 +78,6 @@ function sortAble(th, tableId, iCol, dataType) {
         //如果不是同一列，使用数组的sort方法，传进排序函数
         aTrs.sort(compareEle(iCol, dataType));
     }
-
     var oFragment = document.createDocumentFragment();
     for (var i = 0; i < aTrs.length; i++) {
         oFragment.appendChild(aTrs[i]);
@@ -90,7 +103,8 @@ function sortAble(th, tableId, iCol, dataType) {
     var subRows = $("#" + tableId + " tr[parent]");
     for (var t = subRows.length - 1; t >= 0 ; t--) {
         var parent = $("#" + tableId + " tr[group='" + $(subRows[t]).attr("parent") + "']");
-        parent.after($(subRows[t]));6             }
+        parent.after($(subRows[t]));
+    }
 }
 
 //将列的类型转化成相应的可以排列的数据类型
@@ -112,8 +126,10 @@ function convert(sValue, dataType) {
 function compareEle(iCol, dataType) {
     return function (oTR1, oTR2) {
 
-        var vValue1 = convert(removeHtmlTag($(oTR1.cells[iCol]).html()), dataType);
-        var vValue2 = convert(removeHtmlTag($(oTR2.cells[iCol]).html()), dataType);
+        // var vValue1 = convert(removeHtmlTag($(oTR1.cells[iCol]).html()), dataType);
+        // var vValue2 = convert(removeHtmlTag($(oTR2.cells[iCol]).html()), dataType);
+        var vValue1 = convert($(oTR1.cells[iCol]).html(), dataType);
+        var vValue2 = convert($(oTR2.cells[iCol]).html(), dataType);
         if (vValue1 < vValue2) {
             return -1;
         }
@@ -124,10 +140,35 @@ function compareEle(iCol, dataType) {
     };
 }
 
-//去掉html标签
-function removeHtmlTag(html) {
-    return html.replace(/<[^>]+>/g, "");
+// 去掉html标签
+// function removeHtmlTag(html) {
+//     return html.replace(/<[^>]+>/g, "");
+// }
+
+function my_sort(th, tableId, iCol, dataType) {
+    var tbody = table.tBodies[0];
+    var colRows = tbody.rows;
+    var aTrs = new Array;
+    //将得到的行放入数组，备用
+    for (var i = 0; i < colRows.length; i++) {
+        aTrs.push(colRows[i]);
+    }
+    //判断上一次排列的列和现在需要排列的是否同一个。
+    var thCol = $(table.tHead.rows[0].cells[iCol]);
+    if (table.sortCol == iCol) {
+        aTrs.reverse();
+    } else {
+        //如果不是同一列，使用数组的sort方法，传进排序函数
+        aTrs.sort(compareEle(iCol, dataType));
+    }
 }
-
-
-
+function sortBySelecter(event) {
+    // alert(event.value);
+    if (event.value ==0){
+        sortAble(this,'tableSort', 9,'date');
+    }else if (event.value==1){
+        sortAble(this,'tableSort', 10,'date');
+    } else {
+        sortAble(this,'tableSort', 11,'float');
+    }
+}

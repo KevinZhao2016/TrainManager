@@ -58,6 +58,13 @@
                         <div class="wizard-header">
                             <h3 class="wizard-title">查询结果</h3>
                             <p class="category">Query result</p>
+                            <div class="choose_sort selectpicker">
+                            <select name="country" class="form-control" onchange="sortBySelecter(this)">
+                                <option  selected="" value="0">按出发时间排序</option>
+                                <option value="1"> 按总历时排序 </option>
+                                <option value="2"> 按价格排序 </option>
+                            </select>
+                            </div>
                         </div>
                         <div class="row">
                             <div id="container">
@@ -73,6 +80,9 @@
                                         <th>商务座</th>
                                         <th>一等座</th>
                                         <th>二等座</th>
+                                        <th style="display: none"></th>
+                                        <th style="display: none"></th>
+                                        <th style="display: none"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -80,7 +90,7 @@
                                         List<QueryResult> queryResultList = (List<QueryResult>)session.getAttribute("queryResultList");
                                         for(int i=0; i< queryResultList.size();i++){
                                     %>
-                                    <tr style="border: none" class="ticket_title">
+                                    <tr style="border: none" class="ticket_title" group=<%=i%>>
                                         <td colspan="9">
                                             <i class="fa fa-clock-o"></i>
                                             出发时间：
@@ -98,11 +108,25 @@
                                             <i class="fa fa-jpy"></i>
                                             总价格：<%=queryResultList.get(i).getTotalSecondClassPrice()%>元起
                                         </td>
+                                        <td style="display: none">
+                                            <%=
+                                            queryResultList.get(i).getTripBeans().get(0).getDepartureTime()
+                                            %>
+                                        </td>
+                                        <td style="display: none">
+                                            queryResultList.get(i).getTotalTime()
+                                        </td>
+                                        <td style="display: none">
+                                            <%=
+                                                queryResultList.get(i).getTotalSecondClassPrice()
+                                            %>
+
+                                        </td>
                                     </tr>
                                     <%
                                         for(int j=0; j<2;j++){
                                     %>
-                                    <tr>
+                                    <tr parent=<%=i%>>
                                     <td>
                                         <%=
                                         queryResultList.get(i).getTripBeans().get(j).getTname()
@@ -137,7 +161,7 @@
                                     <td class="ticket_font" onclick="show_price(this)" style="cursor: pointer">有</td>
                                     <td class="ticket_font" onclick="show_price(this)" style="cursor: pointer">有</td>
                                     </tr>
-                                    <tr style="display: none">
+                                    <tr style="display: none" parent=<%=i%>>
                                         <td colspan="6"></td>
                                         <td>
                                             <%="￥"+
