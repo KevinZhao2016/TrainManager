@@ -4,11 +4,17 @@ import com.entity.UsersEntity;
 
 import java.util.List;
 public interface UserDao {
-    public List ListUser();
+    List ListUser();
 
-    public String Login(String TelNum,String Password);
+    String Login(String TelNum, String Password);
 
-    public int Register(UsersEntity user);
+    int Register(UsersEntity user);
+
+    Boolean UpdateUser(UsersEntity usersEntity);
+
+    UsersEntity findUserById(int id);
+
+    Boolean DeleteUser(int id);
 }
 
 

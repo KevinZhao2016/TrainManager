@@ -12,6 +12,7 @@ import java.util.List;
 
 public class UserDaoImpl implements UserDao {
 
+    @Override
     public List ListUser() {
         Session session = new HibernateUtil().getSession();
         try {
@@ -25,7 +26,8 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
-    public String Login(String TelNum,String Password){
+    @Override
+    public String Login(String TelNum, String Password){
         Session session = new HibernateUtil().getSession();
         try{
             String hql = "from UsersEntity where telNum = ?";
@@ -49,6 +51,7 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    @Override
     public int Register(UsersEntity user){
         Session session = new HibernateUtil().getSession();
         Transaction tran = session.beginTransaction();
@@ -63,8 +66,68 @@ public class UserDaoImpl implements UserDao {
         }catch (Exception e){
             e.printStackTrace();
             return 0;
+        } finally {
+            session.close();
         }
-        finally {
+    }
+
+    @Override
+    public Boolean UpdateUser(UsersEntity usersEntity) {
+        Session session = new HibernateUtil().getSession();
+        Transaction tran = session.beginTransaction();
+//        String hql = "update UsersEntity as user set user.telNum = ?,user.passwd = ?,user.name = ? where user.id = ?";
+//        Query query = session.createQuery(hql);
+//        query.setParameter(0,usersEntity.getTelNum());
+//        query.setParameter(1,usersEntity.getPasswd());
+//        query.setParameter(2,usersEntity.getName());
+//        query.setParameter(3,usersEntity.getId());
+        try {
+            session.update(usersEntity);
+            tran.commit();
+            return true;
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            tran.rollback();
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public UsersEntity findUserById(int id) {
+        Session session = new HibernateUtil().getSession();
+        String hql = "from UsersEntity where id = ?";
+        Query query = session.createQuery(hql);
+        query.setParameter(0, id);
+        UsersEntity user = (UsersEntity) query.uniqueResult();
+        if (user != null) {
+            return user;
+        } else {
+            return new UsersEntity();
+        }
+    }
+
+    @Override
+    public Boolean DeleteUser(int id) {
+        Session session = new HibernateUtil().getSession();
+        UsersEntity user = this.findUserById(id);
+        Transaction tran = session.beginTransaction();
+        try {
+            session.delete(user);
+            tran.commit();
+            return true;
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            tran.rollback();
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
             session.close();
         }
     }

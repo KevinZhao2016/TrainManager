@@ -10,10 +10,11 @@
     <property name="connection.password">123456</property>
     <property name="hibernate.connection.pool_size">20</property>
     <property name="connection.characterEncoding">UTF-8</property>
-    <mapping resource="com/entity/UsersEntity.hbm.xml"/>
+    <mapping resource="com/entity/UsersEntity.hbm.xml" />
     <mapping resource="com/entity/StationEntity.hbm.xml"/>
     <mapping resource="com/entity/RouteEntity.hbm.xml"/>
     <mapping resource="com/entity/TripsEntity.hbm.xml"/>
+
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
