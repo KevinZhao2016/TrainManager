@@ -60,8 +60,8 @@ public class StationMngAction {
     }
 
     public String Update() throws Exception {
-        StationEntity routeEntity = this.setStationEntity();
-        if (stationManagerServer.UpdateStation(routeEntity)) {
+        StationEntity stationEntity = this.setStationEntity();
+        if (stationManagerServer.UpdateStation(stationEntity)) {
             return "success";
         } else {
             return "fail";
@@ -69,8 +69,8 @@ public class StationMngAction {
     }
 
     public String Add() throws Exception {
-        StationEntity routeEntity = this.setStationEntity();
-        if (stationManagerServer.AddStation(routeEntity)) {
+        StationEntity stationEntity = this.setStationEntity();
+        if (stationManagerServer.AddStation(stationEntity)) {
             return "success";
         } else {
             return "fail";
@@ -78,8 +78,8 @@ public class StationMngAction {
     }
 
     public String Delete() throws Exception {
-        StationEntity routeEntity = this.setStationEntity();
-        if (stationManagerServer.DeleteStation(routeEntity)) {
+        StationEntity stationEntity = this.setStationEntity();
+        if (stationManagerServer.DeleteStation(stationEntity)) {
             return "success";
         } else {
             return "fail";

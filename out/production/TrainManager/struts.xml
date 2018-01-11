@@ -20,7 +20,11 @@
             <result name="success" type="redirect">/display.jsp</result>
             <result name="fail" type="redirect">/query_fail_1.jsp</result>
         </action>
-        <action name="addStation" class="com.action.StationMngAction"></action>
+        <action name="ListStation" class="com.action.StationMngAction" method="List"></action>
+        <action name="AddStation" class="com.action.StationMngAction" method="Add"></action>
+        <action name="DeleteStation" class="com.action.StationMngAction" method="Delete"></action>
+        <action name="UpdateStation" class="com.action.StationMngAction" method="Update"></action>
+        <action name="GetStation" class="com.action.StationMngAction" method="findRouteById"></action>
         <action name="addStation2" class="com.action.RouteMngAction"></action>
         <action name="addStation3" class="com.action.TripMngAction"></action>
         <action name="addStation4" class="com.action.UserMngAction"></action>
