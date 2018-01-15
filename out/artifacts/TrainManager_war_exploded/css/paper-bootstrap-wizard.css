@@ -89,11 +89,13 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
   box-shadow: none;
 
 }
-.form-group-2{
+
+.form-group-2 {
   margin-left: 25%;
   position: relative;
 }
-.form-control-2{
+
+.form-control-2 {
   width: 50%;
   display: inline-block;
   position: absolute;

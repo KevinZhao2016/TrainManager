@@ -143,7 +143,7 @@
                             </td>
                             <td>
                                 <%=
-                                TripList.get(i).getDeparture().getTime()
+                                TripList.get(i).getDeparture().getHours() + ":" + TripList.get(i).getDeparture().getMinutes() + ":" + TripList.get(i).getDeparture().getSeconds()
                                 %>
                             </td>
                             <td>
