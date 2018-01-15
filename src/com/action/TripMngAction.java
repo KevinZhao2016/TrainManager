@@ -101,8 +101,7 @@ public class TripMngAction {
     }
 
     public String Delete() throws Exception {
-        TripsEntity tripsEntity = this.setTripsEntity();
-        if (tripManagerServer.DeleteTrips(tripsEntity)) {
+        if (tripManagerServer.DeleteTrips(this.getTid())) {
             this.List();
             return "success";
         } else {

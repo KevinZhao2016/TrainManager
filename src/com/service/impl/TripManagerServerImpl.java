@@ -27,7 +27,8 @@ public class TripManagerServerImpl implements TripManageServer {
     }
 
     @Override
-    public Boolean DeleteTrips(TripsEntity tripsEntity) {
+    public Boolean DeleteTrips(int id) {
+        TripsEntity tripsEntity = findTripsById(id);
         return tripsDao.DeleteTrips(tripsEntity);
     }
 

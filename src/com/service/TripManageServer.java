@@ -14,7 +14,7 @@ public interface TripManageServer {
 
     Boolean AddTrips(TripsEntity tripsEntity);
 
-    Boolean DeleteTrips(TripsEntity tripsEntity);
+    Boolean DeleteTrips(int id);
 
     TripsEntity findTripsById(int tid);
 }
