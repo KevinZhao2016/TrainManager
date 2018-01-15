@@ -14,7 +14,7 @@ public interface RouteManageServer {
 
     Boolean AddRoute(RouteEntity routeEntity);
 
-    Boolean DeleteRoute(RouteEntity routeEntity);
+    Boolean DeleteRoute(int id);
 
     RouteEntity findRouteById(int id);
 }

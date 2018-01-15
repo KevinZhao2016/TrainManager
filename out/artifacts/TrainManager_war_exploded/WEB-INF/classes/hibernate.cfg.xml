@@ -14,6 +14,7 @@
     <mapping resource="com/entity/StationEntity.hbm.xml"/>
     <mapping resource="com/entity/RouteEntity.hbm.xml"/>
     <mapping resource="com/entity/TripsEntity.hbm.xml"/>
+
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>

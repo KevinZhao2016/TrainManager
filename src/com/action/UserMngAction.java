@@ -73,6 +73,7 @@ public class UserMngAction {
     public String Update() throws Exception {
         UsersEntity usersEntity = this.setUsersEntity();
         if (userManagerServer.UpdateUser(usersEntity)) {
+            this.List();
             return "success";
         } else {
             return "fail";
@@ -83,6 +84,7 @@ public class UserMngAction {
     public String Delete() throws Exception {
         UsersEntity usersEntity = this.setUsersEntity();
         if (userManagerServer.DeleteUser(this.getId())) {
+            this.List();
             return "success";
         } else {
             return "fail";

@@ -74,7 +74,7 @@ public class TripMngAction {
         if (list != null) {
             ActionContext actionContext = ActionContext.getContext();
             Map session = actionContext.getSession();
-            session.put("TripsList", list);
+            session.put("TripList", list);
             return "success";
         } else
             return "fail";
@@ -83,6 +83,7 @@ public class TripMngAction {
     public String Update() throws Exception {
         TripsEntity tripsEntity = this.setTripsEntity();
         if (tripManagerServer.UpdateTrips(tripsEntity)) {
+            this.List();
             return "success";
         } else {
             return "fail";
@@ -92,6 +93,7 @@ public class TripMngAction {
     public String Add() throws Exception {
         TripsEntity tripsEntity = this.setTripsEntity();
         if (tripManagerServer.AddTrips(tripsEntity)) {
+            this.List();
             return "success";
         } else {
             return "fail";
@@ -101,6 +103,7 @@ public class TripMngAction {
     public String Delete() throws Exception {
         TripsEntity tripsEntity = this.setTripsEntity();
         if (tripManagerServer.DeleteTrips(tripsEntity)) {
+            this.List();
             return "success";
         } else {
             return "fail";

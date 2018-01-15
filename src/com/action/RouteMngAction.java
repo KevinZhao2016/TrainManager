@@ -105,6 +105,7 @@ public class RouteMngAction {
             ActionContext actionContext = ActionContext.getContext();
             Map session = actionContext.getSession();
             session.put("RouteList", list);
+            System.out.print("1");
             return "success";
         } else
             return "fail";
@@ -113,6 +114,7 @@ public class RouteMngAction {
     public String Update() throws Exception {
         RouteEntity routeEntity = this.setRouteEntity();
         if (routeManagerServer.UpdateRoute(routeEntity)) {
+            this.List();
             return "success";
         } else {
             return "fail";
@@ -122,6 +124,7 @@ public class RouteMngAction {
     public String Add() throws Exception {
         RouteEntity routeEntity = this.setRouteEntity();
         if (routeManagerServer.AddRoute(routeEntity)) {
+            this.List();
             return "success";
         } else {
             return "fail";
@@ -129,8 +132,8 @@ public class RouteMngAction {
     }
 
     public String Delete() throws Exception {
-        RouteEntity routeEntity = this.setRouteEntity();
-        if (routeManagerServer.DeleteRoute(routeEntity)) {
+        if (routeManagerServer.DeleteRoute(this.getRid())) {
+            this.List();
             return "success";
         } else {
             return "fail";

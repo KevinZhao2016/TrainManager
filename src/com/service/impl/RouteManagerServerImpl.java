@@ -28,7 +28,8 @@ public class RouteManagerServerImpl implements RouteManageServer {
     }
 
     @Override
-    public Boolean DeleteRoute(RouteEntity routeEntity) {
+    public Boolean DeleteRoute(int id) {
+        RouteEntity routeEntity = findRouteById(id);
         return routeDao.DeleteRoute(routeEntity);
     }
 

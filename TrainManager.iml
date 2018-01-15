@@ -56,6 +56,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="struts2" level="project" />
+    <orderEntry type="library" name="commons-beanutils-1.9.2" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.44-bin" level="project" />
     <orderEntry type="library" name="annotations-api" level="project" />
   </component>

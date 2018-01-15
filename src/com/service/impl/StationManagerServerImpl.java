@@ -29,7 +29,8 @@ public class StationManagerServerImpl implements StationManageServer {
     }
 
     @Override
-    public Boolean DeleteStation(StationEntity stationEntity) {
+    public Boolean DeleteStation(int id) {
+        StationEntity stationEntity = findStationById(id);
         return stationDao.DeleteStation(stationEntity);
     }
 

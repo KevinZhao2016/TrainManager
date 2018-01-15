@@ -20,6 +20,70 @@
             <result name="success" type="redirect">/display.jsp</result>
             <result name="fail" type="redirect">/query_fail_1.jsp</result>
         </action>
+        <!--路线管理-->
+        <action name="Listroute" class="com.action.RouteMngAction" method="List">
+            <result name="success" type="redirect">/route_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="Addroute" class="com.action.RouteMngAction" method="Add">
+            <result name="success" type="redirect">/route_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="Updateroute" class="com.action.RouteMngAction" method="Update">
+            <result name="success" type="redirect">/route_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="Deleteroute" class="com.action.RouteMngAction" method="Delete">
+            <result name="success" type="redirect">/route_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <!--站点管理-->
+        <action name="Liststation" class="com.action.StationMngAction" method="List">
+            <result name="success" type="redirect">/station_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="AddStation" class="com.action.StationMngAction" method="Add">
+            <result name="success" type="redirect">/station_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="DeleteStation" class="com.action.StationMngAction" method="Delete">
+            <result name="success" type="redirect">/station_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="UpdateStation" class="com.action.StationMngAction" method="Update">
+            <result name="success" type="redirect">/station_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <!--列车管理-->
+        <action name="ListTrip" class="com.action.TripMngAction" method="List">
+            <result name="success" type="redirect">/trip_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="AddTrip" class="com.action.TripMngAction" method="Add">
+            <result name="success" type="redirect">/trip_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="DeleteTrip" class="com.action.TripMngAction" method="Delete">
+            <result name="success" type="redirect">/trip_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="UpdateTrip" class="com.action.TripMngAction" method="Update">
+            <result name="success" type="redirect">/trip_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <!--用户管理-->
+        <action name="ListUser" class="com.action.UserMngAction" method="List">
+            <result name="success" type="redirect">/user_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="DeleteUser" class="com.action.UserMngAction" method="Delete">
+            <result name="success" type="redirect">/user_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
+        <action name="UpdateUser" class="com.action.UserMngAction" method="Update">
+            <result name="success" type="redirect">/user_mng.jsp</result>
+            <result name="fail" type="redirect">/mng_fail.jsp</result>
+        </action>
     </package>
 
 

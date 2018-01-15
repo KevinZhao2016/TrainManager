@@ -14,7 +14,7 @@ public interface StationManageServer {
 
     Boolean AddStation(StationEntity stationEntity);
 
-    Boolean DeleteStation(StationEntity stationEntity);
+    Boolean DeleteStation(int id);
 
     StationEntity findStationById(int id);
 }

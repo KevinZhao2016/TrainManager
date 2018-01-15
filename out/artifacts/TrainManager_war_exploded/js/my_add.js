@@ -20,7 +20,7 @@ function sign_up_deteciton() {
         return false;
     }else {
         var showdiv = document.getElementById('show_div');
-        showdiv.style.display="block";
+        showdiv.style.display = "block";
         return true;
     }
 }
@@ -46,10 +46,10 @@ function sign_in_detection() {
 function book_detection() {
     var depar = document.getElementsByName('DepartureStation');
     var arriv = document.getElementsByName('ArrivalStation');
-    if(depar.value==1||arriv.value==1){
+    if (depar.value == 1 || arriv.value == 1) {
         alert("请选择车站！");
         return false;
-    }else {
+    } else {
         return true;
     }
 }

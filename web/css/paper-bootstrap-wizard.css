@@ -60,19 +60,19 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
 }
 
 .form-control::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .form-control:-moz-placeholder {
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .form-control::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .form-control:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .form-control {
@@ -83,9 +83,25 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
   color: #66615b;
   font-size: 14px;
   padding: 7px 18px;
+
   height: 40px;
   -webkit-box-shadow: none;
   box-shadow: none;
+
+}
+
+.form-group-2 {
+  margin-left: 25%;
+  position: relative;
+}
+
+.form-control-2 {
+  width: 50%;
+  display: inline-block;
+  position: absolute;
+  right: 180px;
+  height: 32px;
+
 }
 .form-control:focus {
   border: 1px solid #e8e7e3;
