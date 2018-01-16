@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.entity.QueryResult" %>
+<%@ page import="com.model.QueryResult" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
@@ -114,7 +114,9 @@
                                             %>
                                         </td>
                                         <td style="display: none">
-                                            queryResultList.get(i).getTotalTime()
+                                            <%=
+                                                queryResultList.get(i).getTotalTime()
+                                            %>
                                         </td>
                                         <td style="display: none">
                                             <%=

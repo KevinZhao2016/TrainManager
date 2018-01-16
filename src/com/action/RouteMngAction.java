@@ -105,7 +105,6 @@ public class RouteMngAction {
             ActionContext actionContext = ActionContext.getContext();
             Map session = actionContext.getSession();
             session.put("RouteList", list);
-            System.out.print("1");
             return "success";
         } else
             return "fail";

@@ -168,6 +168,7 @@ function my_sort(th, tableId, iCol, dataType) {
     //判断上一次排列的列和现在需要排列的是否同一个。
     var thCol = $(table.tHead.rows[0].cells[iCol]);
     if (table.sortCol == iCol) {
+        return;
         aTrs.reverse();
     } else {
         //如果不是同一列，使用数组的sort方法，传进排序函数

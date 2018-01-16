@@ -114,7 +114,9 @@
                                             %>
                                         </td>
                                         <td style="display: none">
+                                            <%=
                                             queryResultList.get(i).getTotalTime()
+                                            %>
                                         </td>
                                         <td style="display: none">
                                             <%=

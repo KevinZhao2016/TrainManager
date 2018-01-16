@@ -158,7 +158,6 @@
                         <tbody>
                         <%
                             List<RouteEntity> RouteList = (List<RouteEntity>) session.getAttribute("RouteList");
-                            out.print(RouteList.size());
                             for (int i = 0; i < RouteList.size(); i++) {
                         %>
                         <tr>

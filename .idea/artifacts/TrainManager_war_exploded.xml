@@ -10,6 +10,8 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Hibernate 5.2.12-5.2.12" />
           <element id="library" level="project" name="Spring-4.3.13.RELEASE" />
+          <element id="library" level="project" name="commons-beanutils-1.9.2" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.44-bin" />
         </element>
       </element>
     </root>
