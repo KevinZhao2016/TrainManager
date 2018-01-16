@@ -6,6 +6,7 @@
   <session-factory>
     <property name="connection.url">jdbc:mysql://111.231.22.45:3306/ourDB</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="show_sql">true</property>
     <property name="connection.username">Ubuntu</property>
     <property name="connection.password">123456</property>
     <property name="hibernate.connection.pool_size">20</property>

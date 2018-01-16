@@ -1,5 +1,8 @@
 package com.service.impl;
 
+import com.dao.RouteDao;
+import com.dao.StationDao;
+import com.dao.TripsDao;
 import com.dao.impl.RouteDaoImpl;
 import com.dao.impl.StationDaoImpl;
 import com.dao.impl.TripsDaoImpl;
@@ -12,12 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QueryTripsServerImpl implements QureyTripsServer {
-    private static StationDaoImpl stationDaoImpl = new StationDaoImpl();
-    private static TripsDaoImpl tripsDaoImpl = new TripsDaoImpl();
-    private static RouteDaoImpl routeDaoImpl = new RouteDaoImpl();
-    private static List<StationEntity> stationList = stationDaoImpl.ListStation();
-    private static List<TripsEntity> tripsList = tripsDaoImpl.ListTrips();
-    private static List<RouteEntity> routeList = routeDaoImpl.ListRoute();
+    private static StationDao stationDao = new StationDaoImpl();
+    private static TripsDao tripsDao = new TripsDaoImpl();
+    private static RouteDao routeDao = new RouteDaoImpl();
+    private static List<StationEntity> stationList = stationDao.ListStation();
+    private static List<TripsEntity> tripsList = tripsDao.ListTrips();
+    private static List<RouteEntity> routeList = routeDao.ListRoute();
 
     //查找直达方案
     @Override
@@ -77,6 +80,8 @@ public class QueryTripsServerImpl implements QureyTripsServer {
                         queryResult.setTotalSecondClassPrice(tripBeanA.getSecondClassPrice() + tripBeanB.getSecondClassPrice());
                         //总时长
                         queryResult.setTotalTime(TimeAdd(tripBeanA.getTripTime(), tripBeanB.getTripTime()));
+                        //停留时间
+                        queryResult.setResidenceTime(TimeSubtraction(tripBeanB.getDepartureTime(), tripBeanA.getArrivalTime()));
                         queryResult.setTripBeans(tripBeanList);
                         queryResult.setTransferStation(station.getName());//换乘站名
                         queryResultList.add(queryResult);
@@ -211,6 +216,12 @@ public class QueryTripsServerImpl implements QureyTripsServer {
     //两个Time相加
     private Time TimeAdd(Time TimeA, Time TimeB) {
         Time time = new Time(TimeA.getHours() + TimeB.getHours(), TimeA.getMinutes() + TimeB.getMinutes(), TimeA.getSeconds() + TimeB.getSeconds());
+        return time;
+    }
+
+    //两个Time相减
+    private Time TimeSubtraction(Time TimeA, Time TimeB) {
+        Time time = new Time(TimeA.getHours() - TimeB.getHours(), TimeA.getMinutes() - TimeB.getMinutes(), TimeA.getSeconds() - TimeB.getSeconds());
         return time;
     }
 

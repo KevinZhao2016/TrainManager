@@ -17,5 +17,8 @@
         <property name="telNum">
             <column name="TelNum" sql-type="varchar(11)" length="11"/>
         </property>
+        <property name="contact">
+            <column name="contact" sql-type="varchar(255)" not-null="true"/>
+        </property>
     </class>
 </hibernate-mapping>

@@ -7,6 +7,7 @@ public class UsersEntity {
     private String name;
     private String passwd;
     private String telNum;
+    private String contact;
 
     public int getId() {
         return id;
@@ -40,6 +41,14 @@ public class UsersEntity {
         this.telNum = telNum;
     }
 
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,12 +57,13 @@ public class UsersEntity {
         return id == that.id &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(passwd, that.passwd) &&
-                Objects.equals(telNum, that.telNum);
+                Objects.equals(telNum, that.telNum) &&
+                Objects.equals(contact, that.contact);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, name, passwd, telNum);
+        return Objects.hash(id, name, passwd, telNum, contact);
     }
 }

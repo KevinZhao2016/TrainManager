@@ -104,6 +104,8 @@
                                             <i class="fa fa-long-arrow-right"></i>
                                             <%=queryResultList.get(i).getArrivalStation()%>&nbsp;&nbsp;
                                             <i class="fa fa-clock-o"></i>
+                                            停留时间：<%=queryResultList.get(i).getResidenceTime()%>&nbsp;
+                                            <i class="fa fa-clock-o"></i>
                                             总历时：<%=queryResultList.get(i).getTotalTime()%>&nbsp;&nbsp;
                                             <i class="fa fa-jpy"></i>
                                             总价格：<%=queryResultList.get(i).getTotalSecondClassPrice()%>元起

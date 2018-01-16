@@ -24,8 +24,8 @@
         <configuration>
           <fileset id="s2fileset" name="Default File Set " removed="false">
             <file>file://$MODULE_DIR$/src/struts.xml</file>
-            <file>jar://$MODULE_DIR$/../struts-2.5.13/lib/struts2-core-2.5.13.jar!/struts-default.xml</file>
-            <file>jar://$MODULE_DIR$/../struts-2.5.13/lib/struts2-json-plugin-2.5.14.1.jar!/struts-plugin.xml</file>
+            <file>jar://$MODULE_DIR$/../packages/struts-2.5.13/lib/struts2-core-2.5.13.jar!/struts-default.xml</file>
+            <file>jar://$MODULE_DIR$/../packages/struts-2.5.13/lib/struts2-json-plugin-2.5.14.1.jar!/struts-plugin.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>
@@ -55,8 +55,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mysql-connector-java-5.1.44-bin" level="project" />
     <orderEntry type="library" name="commons-beanutils-1.9.2" level="project" />
     <orderEntry type="library" name="annotations-api" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.44-bin" level="project" />
   </component>
 </module>

@@ -44,6 +44,10 @@
                     <input type="text" class="form-control form-control-2" name="telNum" autocomplete="off" required>
                 </div>
                 <div class="form-group form-group-2">
+                    联系人：
+                    <input type="text" class="form-control form-control-2" name="contact" autocomplete="off" required>
+                </div>
+                <div class="form-group form-group-2">
                     <input type="submit" value="提交" class="btn btn-primary">
                 </div>
             </form>
@@ -83,6 +87,7 @@
                             <th>用户名</th>
                             <th>密码</th>
                             <th>手机号</th>
+                            <th>联系人</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -110,6 +115,11 @@
                             <td>
                                 <%=
                                 UsersList.get(i).getTelNum()
+                                %>
+                            </td>
+                            <td>
+                                <%=
+                                UsersList.get(i).getContact()
                                 %>
                             </td>
                         </tr>

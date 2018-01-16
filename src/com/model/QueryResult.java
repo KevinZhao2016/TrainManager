@@ -11,6 +11,7 @@ public class QueryResult {
     private String TransferStation;//换乘站
     private Time TotalTime;//总时间
     private Time ArrivalTime;//总到达时间
+    private Time ResidenceTime;//中转站停留时间
     private Double TotalSecondClassPrice;//总二等座价格
     private List<TripBean> tripBeans = new ArrayList<>();//本方案中每辆车的信息
 
@@ -76,5 +77,13 @@ public class QueryResult {
 
     public void setTransferStation(String transferStation) {
         TransferStation = transferStation;
+    }
+
+    public Time getResidenceTime() {
+        return ResidenceTime;
+    }
+
+    public void setResidenceTime(Time residenceTime) {
+        ResidenceTime = residenceTime;
     }
 }
