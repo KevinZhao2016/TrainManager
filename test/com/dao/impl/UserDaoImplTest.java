@@ -1,9 +1,7 @@
 package com.dao.impl;
 
-import com.entity.UsersEntity;
+import com.model.UsersEntity;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class UserDaoImplTest {
     private UserDaoImpl userDao = new UserDaoImpl();

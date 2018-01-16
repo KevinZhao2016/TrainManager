@@ -1,13 +1,11 @@
 package com.service.impl;
 
-import com.entity.QueryResult;
-import com.entity.TripBean;
+import com.model.QueryResult;
+import com.model.TripBean;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class QueryTripsServerImplTest {
     private QueryTripsServerImpl queryTripsServer = new QueryTripsServerImpl();

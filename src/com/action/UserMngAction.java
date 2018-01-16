@@ -1,6 +1,6 @@
 package com.action;
 
-import com.entity.UsersEntity;
+import com.model.UsersEntity;
 import com.opensymphony.xwork2.ActionContext;
 import com.service.impl.UserManagerServerImpl;
 

@@ -4,18 +4,15 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.entity.UsersEntity" table="Users" schema="ourDB">
+    <class name="com.model.StationEntity" table="Station" schema="ourDB">
         <id name="id">
             <column name="id" sql-type="int(11)"/>
         </id>
         <property name="name">
             <column name="name" sql-type="varchar(255)"/>
         </property>
-        <property name="passwd">
-            <column name="passwd" sql-type="varchar(30)" length="30"/>
-        </property>
-        <property name="telNum">
-            <column name="TelNum" sql-type="varchar(11)" length="11"/>
+        <property name="pinyin">
+            <column name="pinyin" sql-type="varchar(100)" length="100"/>
         </property>
     </class>
 </hibernate-mapping>

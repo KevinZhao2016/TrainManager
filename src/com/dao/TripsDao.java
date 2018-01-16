@@ -1,7 +1,7 @@
 package com.dao;
 
 
-import com.entity.TripsEntity;
+import com.model.TripsEntity;
 
 import java.util.List;
 

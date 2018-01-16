@@ -1,12 +1,11 @@
-package com.entity;
+package com.model;
 
 import java.util.Objects;
 
-public class UsersEntity {
+public class StationEntity {
     private int id;
     private String name;
-    private String passwd;
-    private String telNum;
+    private String pinyin;
 
     public int getId() {
         return id;
@@ -24,36 +23,27 @@ public class UsersEntity {
         this.name = name;
     }
 
-    public String getPasswd() {
-        return passwd;
+    public String getPinyin() {
+        return pinyin;
     }
 
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
-    }
-
-    public String getTelNum() {
-        return telNum;
-    }
-
-    public void setTelNum(String telNum) {
-        this.telNum = telNum;
+    public void setPinyin(String pinyin) {
+        this.pinyin = pinyin;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UsersEntity that = (UsersEntity) o;
+        StationEntity that = (StationEntity) o;
         return id == that.id &&
                 Objects.equals(name, that.name) &&
-                Objects.equals(passwd, that.passwd) &&
-                Objects.equals(telNum, that.telNum);
+                Objects.equals(pinyin, that.pinyin);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, name, passwd, telNum);
+        return Objects.hash(id, name, pinyin);
     }
 }

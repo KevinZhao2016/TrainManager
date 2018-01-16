@@ -2,8 +2,7 @@ package com.dao.impl;
 
 import com.dao.HibernateUtil;
 import com.dao.TripsDao;
-import com.entity.TripsEntity;
-import com.entity.UsersEntity;
+import com.model.TripsEntity;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;

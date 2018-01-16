@@ -1,6 +1,6 @@
 package com.service;
 
-import com.entity.RouteEntity;
+import com.model.RouteEntity;
 
 import java.util.List;
 

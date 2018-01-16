@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.entity.RouteEntity" table="Route" schema="ourDB">
+    <class name="com.model.RouteEntity" table="Route" schema="ourDB">
         <id name="rid">
             <column name="Rid" sql-type="int(11)"/>
         </id>

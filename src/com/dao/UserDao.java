@@ -1,6 +1,6 @@
 package com.dao;
 
-import com.entity.UsersEntity;
+import com.model.UsersEntity;
 
 import java.util.List;
 public interface UserDao {

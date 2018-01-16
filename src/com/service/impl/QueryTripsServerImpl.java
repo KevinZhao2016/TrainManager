@@ -3,7 +3,7 @@ package com.service.impl;
 import com.dao.impl.RouteDaoImpl;
 import com.dao.impl.StationDaoImpl;
 import com.dao.impl.TripsDaoImpl;
-import com.entity.*;
+import com.model.*;
 import com.service.QureyTripsServer;
 
 import java.sql.Time;

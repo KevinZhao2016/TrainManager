@@ -1,6 +1,6 @@
 package com.action;
 
-import com.entity.RouteEntity;
+import com.model.RouteEntity;
 import com.opensymphony.xwork2.ActionContext;
 import com.service.impl.RouteManagerServerImpl;
 

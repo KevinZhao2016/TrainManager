@@ -1,10 +1,9 @@
 package com.action;
 
-import com.entity.TripsEntity;
+import com.model.TripsEntity;
 import com.opensymphony.xwork2.ActionContext;
 import com.service.impl.TripManagerServerImpl;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;

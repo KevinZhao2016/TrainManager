@@ -1,7 +1,7 @@
 package com.service.impl;
 
 import com.dao.impl.TripsDaoImpl;
-import com.entity.TripsEntity;
+import com.model.TripsEntity;
 import com.service.TripManageServer;
 
 import java.util.List;

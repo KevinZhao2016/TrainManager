@@ -2,8 +2,7 @@ package com.dao.impl;
 
 import com.dao.HibernateUtil;
 import com.dao.RouteDao;
-import com.entity.RouteEntity;
-import com.entity.UsersEntity;
+import com.model.RouteEntity;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;

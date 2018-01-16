@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.entity.RouteEntity" %>
-<%@ page import="com.entity.StationEntity" %><%--
+<%@ page import="com.model.RouteEntity" %>
+<%@ page import="com.model.StationEntity" %><%--
   Created by IntelliJ IDEA.
   User: lipen
   Date: 2018/1/12

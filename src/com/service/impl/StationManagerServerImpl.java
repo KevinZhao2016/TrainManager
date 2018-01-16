@@ -2,10 +2,9 @@ package com.service.impl;
 
 import com.dao.StationDao;
 import com.dao.impl.StationDaoImpl;
-import com.entity.StationEntity;
+import com.model.StationEntity;
 import com.service.StationManageServer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StationManagerServerImpl implements StationManageServer {

@@ -1,6 +1,6 @@
 package com.action;
 
-import com.entity.QueryResult;
+import com.model.QueryResult;
 import com.opensymphony.xwork2.ActionContext;
 import com.service.impl.QueryTripsServerImpl;
 

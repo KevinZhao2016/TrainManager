@@ -1,6 +1,6 @@
 package com.action;
 
-import com.entity.UsersEntity;
+import com.model.UsersEntity;
 import com.service.impl.RegisterServerImpl;
 
 public class RegisterAction {

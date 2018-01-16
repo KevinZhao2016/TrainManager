@@ -1,6 +1,6 @@
 package com.dao;
 
-import com.entity.StationEntity;
+import com.model.StationEntity;
 
 import java.util.List;
 

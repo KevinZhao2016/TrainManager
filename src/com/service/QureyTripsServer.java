@@ -1,8 +1,6 @@
 package com.service;
 
-import com.entity.QueryResult;
-import com.entity.StationEntity;
-import com.entity.TripsEntity;
+import com.model.QueryResult;
 
 import java.util.List;
 

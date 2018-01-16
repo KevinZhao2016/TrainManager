@@ -2,7 +2,7 @@ package com.dao.impl;
 
 import com.dao.HibernateUtil;
 import com.dao.UserDao;
-import com.entity.UsersEntity;
+import com.model.UsersEntity;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;

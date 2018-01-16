@@ -2,7 +2,7 @@ package com.service.impl;
 
 
 import com.dao.impl.UserDaoImpl;
-import com.entity.UsersEntity;
+import com.model.UsersEntity;
 import com.service.RegisterServer;
 
 

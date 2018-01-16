@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.entity.RouteEntity" %><%--
+<%@ page import="com.model.RouteEntity" %><%--
   Created by IntelliJ IDEA.
   User: lipen
   Date: 2018/1/12

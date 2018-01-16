@@ -2,8 +2,7 @@ package com.dao.impl;
 
 import com.dao.HibernateUtil;
 import com.dao.StationDao;
-import com.entity.StationEntity;
-import com.entity.UsersEntity;
+import com.model.StationEntity;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;

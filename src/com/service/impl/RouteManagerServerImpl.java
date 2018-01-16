@@ -1,10 +1,9 @@
 package com.service.impl;
 
 import com.dao.impl.RouteDaoImpl;
-import com.entity.RouteEntity;
+import com.model.RouteEntity;
 import com.service.RouteManageServer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RouteManagerServerImpl implements RouteManageServer {

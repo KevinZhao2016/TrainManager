@@ -1,6 +1,6 @@
 package com.action;
 
-import com.entity.StationEntity;
+import com.model.StationEntity;
 import com.opensymphony.xwork2.ActionContext;
 import com.service.impl.StationManagerServerImpl;
 

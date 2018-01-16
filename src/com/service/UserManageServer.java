@@ -1,6 +1,6 @@
 package com.service;
 
-import com.entity.UsersEntity;
+import com.model.UsersEntity;
 
 import java.util.List;
 
